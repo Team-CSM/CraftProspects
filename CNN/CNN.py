@@ -12,7 +12,7 @@ train_data_dir = 'kaggledata/train'
 validation_data_dir = 'kaggledata/validation'
 nb_train_samples = 2000
 nb_validation_samples = 800
-epochs = 50
+epochs = 3
 batch_size = 16
 
 if K.image_data_format() == 'channels_first':
@@ -74,4 +74,4 @@ model.fit_generator(
     validation_data=validation_generator,
     validation_steps=nb_validation_samples // batch_size)
 
-model.save_weights('first_try.h5')
+model.save_weights('testing.h5')
