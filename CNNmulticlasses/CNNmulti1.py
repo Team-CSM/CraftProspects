@@ -40,7 +40,7 @@ def get_class(img_path):
     return int(img_path.split('/')[-2])
 
 #root_dir = 'GTSRB/Final_Training/Images/'
-root_dir = 'csmdata2/train/'
+root_dir = '../../csmdata2/train/'
 #label: 0,1,2,3
 # 00000 = artisinal_mine.jpg
 # 00001 = clear_primary.jpg

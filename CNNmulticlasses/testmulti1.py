@@ -38,7 +38,7 @@ model.compile(loss='binary_crossentropy',
 
 
 imgstr = []
-location = "slices/"
+location = "../../slices/"
 for root, dirs, filenames in os.walk(location):
     for f in filenames:
         if (f.startswith('.') == False):
