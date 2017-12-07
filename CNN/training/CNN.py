@@ -8,12 +8,12 @@ from keras import backend as K
 # dimensions of our images.
 img_width, img_height = 150, 150
 
-train_data_dir = 'kaggledata/data/train'
-validation_data_dir = 'kaggledata/data/validation'
-nb_train_samples = 2000
-nb_validation_samples = 800
-epochs = 3
-batch_size = 16
+train_data_dir = '/home/csm/Documents/data/train'
+validation_data_dir = '/home/csm/Documents/data/validation'
+nb_train_samples = 4000
+nb_validation_samples = 1600
+epochs = 200
+batch_size = 32
 
 if K.image_data_format() == 'channels_first':
     input_shape = (3, img_width, img_height)

@@ -7,7 +7,7 @@ from tkFileDialog import askopenfilename
 import os
 from skimage import color, exposure, transform, io
 
-IMG_SIZE = 150
+IMG_SIZE = 48
 
 def preprocess_img(img):
     # Histogram normalization in v channel

@@ -12,7 +12,7 @@ from keras.callbacks import LearningRateScheduler, ModelCheckpoint
 
 
 NUM_CLASSES = 4
-IMG_SIZE = 150
+IMG_SIZE = 48
 
 def preprocess_img(img):
     # Histogram normalization in v channel
@@ -115,8 +115,8 @@ def lr_schedule(epoch):
     return lr * (0.1 ** int(epoch / 10))
 
 
-batch_size = 16
-epochs = 20
+batch_size = 32
+epochs = 10
 
 
 model.fit(X, Y,
