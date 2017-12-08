@@ -39,7 +39,7 @@ def preprocess_img(img):
 def get_class(img_path):
     return int(img_path.split('/')[-2])
 
-#root_dir = 'GTSRB/Final_Training/Images/'
+
 root_dir = '../../csmdata2/train/'
 #label: 0,1,2,3
 # 00000 = artisinal_mine.jpg
@@ -104,7 +104,7 @@ def cnn_model():
 model = cnn_model()
 
 # let's train the model using SGD + momentum
-lr = 0.01
+lr = 0.001
 sgd = SGD(lr=lr, decay=1e-6, momentum=0.9, nesterov=True)
 model.compile(loss='categorical_crossentropy',
               optimizer=sgd,
@@ -115,8 +115,8 @@ def lr_schedule(epoch):
     return lr * (0.1 ** int(epoch / 10))
 
 
-batch_size = 32
-epochs = 10
+batch_size = 16
+epochs = 30
 
 
 model.fit(X, Y,

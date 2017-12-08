@@ -31,7 +31,7 @@ def preprocess_img(img):
     return img
 
 
-model = load_model('20epochs04527.h5')
+model = load_model('CNN1model07670.h5')
 model.compile(loss='binary_crossentropy',
               optimizer='rmsprop',
               metrics=['accuracy'])
@@ -42,16 +42,20 @@ location = "../../slices/"
 for root, dirs, filenames in os.walk(location):
     for f in filenames:
         if (f.startswith('.') == False):
-            imgstr.append(preprocess_img(io.imread(location + f)))
+            #imgstr.append(preprocess_img(io.imread(location + f)))
+            imgstr.append(location + f)
 
 for image in imgstr:
-    x = np.asarray(image, dtype='float32')
+    #x = np.asarray(image, dtype='float32')
+    print("IMAGE: ", image)
+    x = np.asarray(preprocess_img(io.imread(image)), dtype='float32')
     x = np.expand_dims(x, axis=0)
     x = x/255
     probs = model.predict(x) #percent
     classIndex = probs.argmax(axis=-1)[0]
-    print("probs: ", probs)
-    print("class , accuracy", classIndex, probs[0][classIndex])
+    print("ACCURACIES: ", probs)
+    print("CLASS: ", classIndex)
+    print("ACCURACY: ", probs[0][classIndex])
     print("-------------------------")
 
 # 00000 = artisinal_mine.jpg
