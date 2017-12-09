@@ -7,11 +7,12 @@ using UnityEngine.UI;
 public class Timescript : MonoBehaviour {
     public string winscene;
     public string losescene;
-    public static int countdown = 60;
+    public static float countdown = 60;
     // Use this for initialization
     IEnumerator Start () {
 
-        countdown = 10;
+        countdown = 60;
+        GlobalControl.coins = 0;
         while (countdown > 0)
         {
             yield return new WaitForSeconds(1);
