@@ -31,7 +31,7 @@ def preprocess_img(img):
     return img
 
 
-model = load_model('CNN1model07670.h5')
+model = load_model('CNN1model07901.h5')
 model.compile(loss='binary_crossentropy',
               optimizer='rmsprop',
               metrics=['accuracy'])

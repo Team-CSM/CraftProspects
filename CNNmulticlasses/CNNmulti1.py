@@ -104,7 +104,7 @@ def cnn_model():
 model = cnn_model()
 
 # let's train the model using SGD + momentum
-lr = 0.001
+lr = 0.01
 sgd = SGD(lr=lr, decay=1e-6, momentum=0.9, nesterov=True)
 model.compile(loss='categorical_crossentropy',
               optimizer=sgd,
@@ -115,8 +115,8 @@ def lr_schedule(epoch):
     return lr * (0.1 ** int(epoch / 10))
 
 
-batch_size = 16
-epochs = 30
+batch_size = 100
+epochs = 50
 
 
 model.fit(X, Y,
