@@ -1,11 +1,12 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class Clicklocation : MonoBehaviour {
 
-    public double range = 10;
+    public double range = 1;
 	// Use this for initialization
 	void Start () {
 		
@@ -16,16 +17,23 @@ public class Clicklocation : MonoBehaviour {
         if (Input.GetMouseButtonDown(0))
         {
             Vector3 mouseVec = Input.mousePosition;
-            string mousePos = mouseVec.ToString();
+
             
 
-            for(int i = 0; i < 900; i++)
+            float transformedx = (float)Math.Ceiling((mouseVec.x - 175) / 15.86);
+            float transformedy = (float)Math.Ceiling((585-mouseVec.y) / 12);
+
+            Vector3 mouseTran = new Vector3(transformedx, transformedy, 0);
+
+            string mousePos = mouseTran.ToString();
+
+            for (int i = 0; i < 2500; i++)
             {
                 if (Uploadtextscript.x[i] != 0 && Uploadtextscript.y[i] != 0)
                 {
-                    if ((Uploadtextscript.x[i] - range) < mouseVec.x && mouseVec.x < (Uploadtextscript.x[i] + range))
+                    if ((Uploadtextscript.x[i] - range) < mouseTran.x && mouseTran.x < (Uploadtextscript.x[i] + range))
                     {
-                        if ((Uploadtextscript.y[i] - range) < mouseVec.y && mouseVec.y < (Uploadtextscript.y[i] + range))
+                        if ((Uploadtextscript.y[i] - range) < mouseTran.y && mouseTran.y < (Uploadtextscript.y[i] + range))
                         {
                             GlobalControl.coins++;
                             GameObject.Find("Text").GetComponent<Text>().text = "Total Score = " + GlobalControl.coins;
