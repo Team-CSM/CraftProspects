@@ -24,9 +24,9 @@ public class Gridscript : MonoBehaviour
         float height = Imageinserter.texheight/200;
 
         float i = 0;
-        while (i < 31)
+        while (i < 51)
         {
-            float j = -1+(i / 15);
+            float j = -1+(i / 25);
             start = new Vector3(j*width, height,-1);
             end = new Vector3(j*width, -height, -1);
             //start = new Vector3(4, height, -2);
@@ -38,9 +38,9 @@ public class Gridscript : MonoBehaviour
 
         
         float k = 0;
-        while (k < 31)
+        while (k < 51)
         {
-            float l = -1 + (k / 15);
+            float l = -1 + (k / 25);
             start = new Vector3(width, l*height, -1);
             end = new Vector3(-width, l*height, -1);
             

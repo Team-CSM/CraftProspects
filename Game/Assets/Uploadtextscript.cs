@@ -8,12 +8,10 @@ using UnityEngine;
 public class Uploadtextscript : MonoBehaviour {
 
     public string filePath = null;
-    public static double[] x = new double[900];
-    public static double[] y = new double[900];
+    public static double[] x = new double[2500];
+    public static double[] y = new double[2500];
     // Use this for initialization
     void Start () {
-
-        
 
 
         int i = 0;
@@ -31,9 +29,9 @@ public class Uploadtextscript : MonoBehaviour {
 
         file.Close();
 
-        Debug.Log(x[0] + "," + y[0]);
-        Debug.Log(x[1] + "," + y[1]);
-        Debug.Log(x[2] + "," + y[2]);
+        Debug.Log(x[1500] + "," + y[1500]);
+        Debug.Log(x[1600] + "," + y[1600]);
+        Debug.Log(x[1700] + "," + y[1700]);
         //System.Console.ReadLine();
     }
 	

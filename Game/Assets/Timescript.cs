@@ -11,7 +11,7 @@ public class Timescript : MonoBehaviour {
     // Use this for initialization
     IEnumerator Start () {
 
-        countdown = 60;
+        countdown = 600;
         GlobalControl.coins = 0;
         while (countdown > 0)
         {
