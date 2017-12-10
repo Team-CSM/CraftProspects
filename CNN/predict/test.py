@@ -18,13 +18,16 @@ if not os.path.exists('slices/'):
 image_slicer.save_tiles(tiles, directory='slices/', prefix='slice')
 
 imgstr = []
-location = "/Users/franzz1818/Documents/CSM-project/CNN/predict/slices/"
+location = "../../csmdata3/slices/"
 
 for root, dirs, filenames in os.walk(location):
+    print("loc: ", location)
     for f in filenames:
         if (f.startswith('.') == False):
             imgstr.append(location + f)
+            print("appending...")
 
+print(imgstr)
 
 model = load_model('testing.h5')
 model.compile(loss='binary_crossentropy',
