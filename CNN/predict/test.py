@@ -18,7 +18,7 @@ if not os.path.exists('slices/'):
 image_slicer.save_tiles(tiles, directory='slices/', prefix='slice')
 
 imgstr = []
-location = "../../csmdata3/slices/"
+location = "/Users/franzz1818/Documents/CSM-project/CNN/predict/slices/"
 
 for root, dirs, filenames in os.walk(location):
     print("loc: ", location)
