@@ -21,13 +21,10 @@ imgstr = []
 location = "/Users/franzz1818/Documents/CSM-project/CNN/predict/slices/"
 
 for root, dirs, filenames in os.walk(location):
-    print("loc: ", location)
     for f in filenames:
         if (f.startswith('.') == False):
             imgstr.append(location + f)
-            print("appending...")
 
-print(imgstr)
 
 model = load_model('testing.h5')
 model.compile(loss='binary_crossentropy',
