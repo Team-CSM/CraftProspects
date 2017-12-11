@@ -12,7 +12,7 @@ window = tk.Tk()
 window.withdraw()
 filename = askopenfilename() # show an "Open" dialog box and return the path to the selected file
 imglist.append(filename)
-model = load_model('/Users/craig/Documents/tp3/split/testing.h5')
+model = load_model('/Users/craig/Documents/tp3/CSM-project/CNN/demonstration/testing.h5')
 model.compile(loss='binary_crossentropy',
               optimizer='rmsprop',
               metrics=['accuracy'])
