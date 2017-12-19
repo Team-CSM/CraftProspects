@@ -194,7 +194,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 203074020}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 571, y: 281, z: 0}
+  m_LocalPosition: {x: 570.5, y: 283.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1320394721}
@@ -232,7 +232,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 536265137}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 540, y: 205, z: -3}
+  m_LocalPosition: {x: 539.5, y: 207.5, z: -3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 203074024}
@@ -471,7 +471,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1115499652
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -590,7 +590,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1320394720}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 340, y: 220, z: -5}
+  m_LocalPosition: {x: 339.5, y: 222.5, z: -5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 203074024}
@@ -756,7 +756,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e54c188127ec74d448174aabb59978f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 10
+  range: 1
+  cross: {fileID: 0}
+  crossImage: {fileID: 2800000, guid: 8aa7ce9cdd126364ea58d1e1227cc8de, type: 3}
 --- !u!1 &1819513217
 GameObject:
   m_ObjectHideFlags: 0
@@ -781,7 +783,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1819513217}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 340, y: 180, z: -5}
+  m_LocalPosition: {x: 339.5, y: 182.5, z: -5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 203074024}
@@ -1091,7 +1093,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddb4ff61f4abe8a448f8606f14958c47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  filePath: C:\Users\Adrian\Desktop\cord.txt
+  filePath: C:\Users\Adrian\Desktop\cloudy.txt
 --- !u!1 &2146609122
 GameObject:
   m_ObjectHideFlags: 0
