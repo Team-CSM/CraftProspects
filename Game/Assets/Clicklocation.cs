@@ -7,6 +7,9 @@ using UnityEngine.UI;
 public class Clicklocation : MonoBehaviour {
 
     public double range = 1;
+    public GameObject cross;
+    public UnityEngine.Object crossImage;
+    static int counter = 0;
 	// Use this for initialization
 	void Start () {
 		
@@ -40,6 +43,24 @@ public class Clicklocation : MonoBehaviour {
                             Uploadtextscript.x[i] = 0;
                             Uploadtextscript.y[i] = 0;
                             Debug.Log("SCORE");
+
+                            cross = new GameObject("Cross" + counter);
+                            cross.AddComponent(typeof(SpriteRenderer));
+                            Texture2D tex = crossImage as Texture2D;
+                            Sprite crossSprite = Sprite.Create(tex, new Rect(0f, 0f, tex.width, tex.height), Vector2.zero);
+                            cross.GetComponent<SpriteRenderer>().sprite = crossSprite;
+
+                            Vector3 scale = new Vector3(0.05f, 0.05f, 0);
+                            cross.GetComponent<Transform>().localScale = scale;
+
+                            float crossx = -7f + (0.28041f * (transformedx-1f));
+                            float crossy = -5.4f + (0.2143f * (50-(transformedy)));
+
+                            Vector3 position = new Vector3(crossx, crossy, -1);
+                            cross.GetComponent<Transform>().position = position;
+
+                            counter++;
+
                         }
                     }
                 }
