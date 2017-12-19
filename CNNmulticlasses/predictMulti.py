@@ -2,6 +2,8 @@ import os
 import numpy as np
 from keras.preprocessing.image import ImageDataGenerator, load_img, img_to_array
 from keras.models import Sequential, load_model
+from PIL import Image
+import image_slicer
 
 img_width, img_height = 48, 48
 model_path = 'model.h5'
@@ -9,14 +11,23 @@ model_weights_path = 'weights.h5'
 model = load_model(model_path)
 model.load_weights(model_weights_path)
 
+if not os.path.exists('./slices'):
+    os.makedirs('./slices')
+    tiles = image_slicer.slice('false_full_tile1.jpg', 2500, save=False)
+    image_slicer.save_tiles(tiles, directory='slices/', prefix='slice')
 
-for i, ret in enumerate(os.walk('../../csmdata3/toPredict')):
-  for i, filename in enumerate(ret[2]):
-    if filename.startswith("."): #hidden files lik .DS_STORE
-      continue
-    
-    imgDir = ret[0] + '/' + filename
-    x = load_img(imgDir, target_size=(img_width,img_height))
+imgstr = []
+location = "./slices/"
+
+for root, dirs, filenames in os.walk(location):
+    for f in filenames:
+        if (f.startswith('.') == False):
+            imgstr.append(location + f)
+
+class_to_name = ["slash_burn", "cloudy", "artisinal_mine"]
+
+for image in imgstr:
+    x = load_img(image, target_size=(img_width,img_height))
 
     x = img_to_array(x)
     x = np.expand_dims(x, axis=0)
@@ -25,16 +36,28 @@ for i, ret in enumerate(os.walk('../../csmdata3/toPredict')):
     predictions = model.predict(x) #predictions in each class
     pred = np.argmax(predictions[0]) #winner index
 
-    print("predictions: ", predictions)
-    print("img: ", imgDir[imgDir.rfind('/')+1:])
+    out1 = class_to_name[pred]
 
-    if pred == 0:
-      print("prediction = 0 = burn")
-    elif pred == 1:
-      print("prediction = 1 = cloudy")
-    elif pred == 2:
-      print("prediction = 2 = mine")
+    f = open(out1+".txt", "a")
+    f.write(image[image.rfind('/')+1:] + "\n")
+    f.close() 
+
+    print("predictions: ", predictions)
+    print("img: ", image[image.rfind('/')+1:])
+
+    print("prediction = " + out1)
+
 
     print("----------------------")
 
+#conversion to coordinates to help out with input to game
+for output in class_to_name:
+    f = open(output+".txt", "r+")
+    lines = f.readlines()
+    for i in range(len(lines)):
+        lines[i] = lines[i][6:-5].replace("_", ",")
 
+    f.seek(0)
+    f.truncate()
+    lines = "\r\n".join(lines)
+    f.writelines(lines)
