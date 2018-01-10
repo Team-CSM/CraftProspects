@@ -25,8 +25,8 @@ lr = 0.001
 nb_train_samples = 891
 nb_validation_samples = 114
 
-train_data_path = '../../csmdata3/train'
-validation_data_path = '../../csmdata3/validation'
+train_data_path = '../../csmdata/train'
+validation_data_path = '../../csmdata/validation'
 #label: 0,1,2
 # 00000 = burn
 # 00001 = cloudy
