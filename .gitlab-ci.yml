@@ -1,5 +1,3 @@
-
-
 build_disseration:
   image: blang/latex
   script:
@@ -9,7 +7,7 @@ build_disseration:
       - "*.pdf"
 
 test_syntax:
-  image: python: 3.6
+  image: python:3.6
   script:
     - pip install -r requirements.txt
     - python CI/syntaxChecks.py
