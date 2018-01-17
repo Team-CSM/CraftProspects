@@ -9,6 +9,4 @@ build_disseration:
 test_syntax:
   image: python:3.6
   script:
-    - pip install --upgrade setuptools
-    - pip install -r requirements.txt
     - python CI/syntaxChecks.py
