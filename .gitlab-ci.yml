@@ -1,7 +1,13 @@
-image: blang/latex
-build:
+build_disseration:
+  image: blang/latex
   script:
     - latexmk -pdf -cd docs/dissertation/dissertation.tex
   artifacts:
     paths:
       - "*.pdf"
+
+test_syntax:
+  image: python:3.6
+  script:
+    - pip install -r requirements.txt
+    - python CI/syntaxChecks.py
