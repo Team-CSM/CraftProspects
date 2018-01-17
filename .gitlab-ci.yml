@@ -9,8 +9,5 @@ build_disseration:
 test_syntax:
   image: python:3.6
   script:
-    - sudo apt-get -y update
-    - sudo apt-get -y install python-pip python-dev python-setuptools git supervisor
-    - pip install --upgrade pip
     - pip install -r requirements.txt
     - python CI/syntaxChecks.py
