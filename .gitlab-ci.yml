@@ -7,6 +7,5 @@ build_disseration:
       - "*.pdf"
 
 test_syntax:
-  image: python:3.6
-  script:
-    - python CI/syntaxChecks.py
+  #image: python:3.6
+  script: python CI/syntaxChecks.py
