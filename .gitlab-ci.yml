@@ -7,5 +7,7 @@ build_disseration:
       - "*.pdf"
 
 test_syntax:
-  #image: python:3.6
-  script: python CI/syntaxChecks.py
+  image: ktzr/python-pip:3.6
+  script:
+    - pip install -r requirements.txt
+    - python CI/syntaxChecks.py
