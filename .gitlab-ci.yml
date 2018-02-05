@@ -1,5 +1,25 @@
-build_disseration:
-  image: blang/latex
+# build_disseration:
+#   image: blang/latex
+#   script:
+#     - latexmk -pdf -cd docs/dissertation/dissertation.tex
+#   artifacts:
+#     paths:
+#       - "*.pdf"
+
+# test_syntax:
+#   image: ktzr/python-pip:3.6
+#   script:
+#     - pip install -r requirements.txt
+#     - python CI/syntaxChecks.py
+
+
+image: blang/latex
+
+stages:
+  - build
+  - test
+
+build:
   script:
     - latexmk -pdf -cd docs/dissertation/dissertation.tex
   artifacts:
@@ -7,7 +27,6 @@ build_disseration:
       - "*.pdf"
 
 test_syntax:
-  image: ktzr/python-pip:3.6
+  stage: test
   script:
-    - pip install -r requirements.txt
     - python CI/syntaxChecks.py
