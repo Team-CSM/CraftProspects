@@ -30,3 +30,4 @@ test_syntax:
   stage: test
   script:
     - python CI/syntaxChecks.py
+  when: on_success
