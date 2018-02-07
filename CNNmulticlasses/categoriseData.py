@@ -10,7 +10,7 @@ from shutil import copyfile
 
 
 
-defooooo populateDict(csvDir, classes):
+defoooooooo populateDict(csvDir, classes):
 
 	classFiles = {}
 	alreadyAdded = []
