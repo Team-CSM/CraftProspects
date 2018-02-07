@@ -29,7 +29,6 @@ def suite():
     return testsSuite
 
 
-if __name__ == "__main__":
-    runner = unittest.TextTestRunner()
-    #test_suite = suite()
-    runner.run(suite())
+runner = unittest.TextTestRunner()
+if len(runner.run(suite()).failures) > 0:
+    raise SystemExit(1)
