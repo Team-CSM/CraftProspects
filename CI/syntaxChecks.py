@@ -16,8 +16,6 @@ class TestSyntax(unittest.TestCase):
         except:
             passed = False
         self.failIf(not passed,"Failed compiling {}".format(self.scriptToCheck))
-        if passed == False:
-            sys.exit(1)
 
 def suite():
     testsSuite = unittest.TestSuite()
