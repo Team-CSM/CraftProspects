@@ -8,15 +8,16 @@
 
 \begin{document}
 
-\title{An Example Project}
+\title{CraftProspect}
 
-\author{Lewis Carroll \\
-        Betty Davis \\
-        James Dean \\
-        Marilyn Monroe \\
-        John Wayne}
+\author{
+		Dan Cristian Cecoi \\
+		Eerika Emilia Haajanen \\
+		Craig Stewart Massie \\
+		Frances Lou Ramirez \\
+		Chun Pang Adrian Wong }
 
-\date{9 January 2009}
+\date{17 January 2018}
 
 \maketitle
 
@@ -34,179 +35,120 @@ The abstract goes here
 
 %==============================================================================
 \section{Introduction}
+\label{sec:introduction}
 
-Software engineering 
-
-This paper presents a case study of... 
-
-
-%% Final paragraph.
-The rest of the case study is structured as follows.  Section
-\ref{sec:background} presents the background of the case study
-discussed, describing the customer and project context, aims and
-objectives and project state at the time of writing.  Sections
-\ref{sec:alice} through Section \ref{sec:managing} discuss issues that
-arose during the project...
+This document is a case study of team CSM's software development process throughout the Team Project 3 course.
+- purpose of document
+\\\\
+- outline of project
+\\\\
+The case study is structured as follows: Case study background, Project planning and team organisation, Requirements gathering, Agile programming and teamwork, Quality assurance and process improvement, and Conclusions. The Case study background describes the customer and project context, inital objectives for the project and the delivered product. Each of the following sections represents different theme and aims to demonstrate and reflect on challenges that the team faced during the project lifecycle and how we responded to and learned from them.
 
 %==============================================================================
 \section{Case Study Background}
+\label{sec:background}
 
-Include details of 
+% information about customer  and project context, aims and
+% objectives and project state at the time of writing
 
-\begin{itemize}
-\item The customer organisation and background.
-\item The rationale and initial objectives for the project.
-\item The final software was delivered for the customer.
-\end{itemize}
+\subsection*{Customer organisation and background}
+
+Our customer for the team project was a Glasgow-based company called Craft Prospect whose focus was in onboard data processing for satellites, and deep learning in the application of Earth observation. Craft Prospect was founded in 2017 by professionals with previous experience in the development of small satellite systems. The company aims to collaborate on mission-level architecture and interface solutions in the NewSpace industry. Glasgow being a base for many NewSpace companies (reference, more about glasgow), the new company wishes to emerge in the marketplace and deliver "responsive yet controlled space systems" (reference to company site).
+\\\\
+The proposed project was in the area of machine learning applications in classification of satellite imagery. The short initial written description that we got of the client was that they wanted an "embedded net trained to suggest the sequence of images based on their value to a user." As the team had no previous experience of machine learning or image classification, this description didn't offer us much information. However, after speaking to the client on the first client day the team decided that this was something that we would want to know more about.
+\\\\
+
+\subsection*{Initial Objectives}
+% the rationale and initial objectives for the project.
+
+Once the team had decided on committing to the customer, we got a chance to sit down with the client and find out more about their objectives and requirements for the project. The customer explained the he was hoping to get two deliverables from this collaboration: a neural network and a game.
+\\\\
+For the neural network, we would be making use of data provided by a Kaggle competition "Planet: Understanding the Amazon from Space". The Kaggle platform hosts competitions for predictive modelling and analytics, which involve manipulation of large datasets provided by companies and users, and for this competition the dataset would be provided by Planet Labs. Planet Labs is a private Earth imaging company specialized in designing and manufacturing miniature satellites. The motivation behind the Planet competition was to prevent and increase response effectiveness of governments and stakeholders to deforestation and other illegal human activity. This could be done by creating an algorithm for labeling "satellite image chips with atmospheric conditions and various classes of land cover/land use".
+\\
+(https://www.kaggle.com/c/planet-understanding-the-amazon-from-space)
+After creating a neural network model to label satellite imagery, we were to create a game where a user could play against the model and pick out targets of importance from a 2D image, and see how they did compared to the neural network. We discussed that there would be different difficulty levels as well, but most requirements were gathered in upcoming sprints as we decided to first focus on the neural network.
+\\\\
+After our first meeting the customer asked us to email him with a brief about our approach type, and preferences for visualization, platform and graphics engine. We emailed customer that we felt we needed to do some research because all the topics are new to us, before we could provide an accurate summary of our preferences. All team members would research neural networks and image recognition as much as possible so that we could provide the brief that the client requested, and so that we could effectively proceed with requirements gathering during the next meeting.
+\\\\
+The first two months (September to mid-November) of the project were spent mostly on research, requirements gathering and building demos of very small scale neural networks to show to the client - this will be referred to as the Setup period because this is how we named it in our Gitlab milestones. Our first official sprint started in mid-November and each sprint lasted for one month. During sprint 1 we concurrently developed the neural network and the game, and finished a binary classification neural net model and had an inital demo of the game to show the client. From sprint 2 onwards we worked on advanced features for the game and moved on from binary to multi-class multi-label neural network development.
+
+- summary of what was actually achieved!, more detail
+summary of how worked during next sprints until delivery
+
+- who was the product for?
+- references to similar related projects?
+
+
+\subsection*{Delivered Software}
+
+
+here is stuff
 
 %==============================================================================
-\section{Alice}
-\label{sec:alice}
+\section{Project Planning and Team Organisation}
+\label{sec:planning}
 
-ALICE \cite{alice} was beginning to get very tired of sitting by her sister
-on the bank and of having nothing to do: once or twice she had peeped into
-the book her sister was reading, but it had no pictures or conversations in
-it, ``and what is the use of a book,'' thought Alice, ``without pictures or
-conversations?'
 
-So she was considering, in her own mind (as well as she could, for the hot
-day made her feel very sleepy and stupid), whether the pleasure of making a
-daisy-chain would be worth the trouble of getting up and picking the
-daisies, when suddenly a White Rabbit with pink eyes ran close by her.
+\subsection*{Team roles}
+During our first sprint we decided it would be good to assign some more specific roles in the team so that there would be a more clear understanding of the responsibilities and specific tasks of each member. We assigned the roles of customer liaison, secretary, merge master and milestone planner. The customer liaison would be the main point of contact for the customer, and this way there would be less confusion about who was responsible for notifying the customer about meeting times and deliverables. The secretary was to take notes of team and customer meetings and summarize these for the Gitlab wiki pages. The merge master was responsible for resolving any merge conflicts on Gitlab and communicating with the individuals involved in the conflicts to resolve them as best as possible. The milestone planner would create the new milestones and organize the issues within them (moving unfinished issues from previous sprints to the current sprint, for example).
+\\\\
+We also had a discussion about how we would conduct and organize code review. Our mentors let us know about 2 possible approaches we could take: we could assign the role of code review to a few select team members who would be responsible for all code review, or we could decide to all be code reviewers. We chose the latter option.
+WHY??
 
-There was nothing so very remarkable in that; nor did Alice think it so
-very much out of the way to hear the Rabbit say to itself ``Oh dear! Oh
-dear! I shall be too late!'' (when she thought it over afterwards it
-occurred to her that she ought to have wondered at this, but at the time it
-all seemed quite natural); but, when the Rabbit actually took a watch out
-of its waistcoat-pocket, and looked at it, and then hurried on, Alice
-started to her feet, for it flashed across her mind that she had never
-before seen a rabbit with either a waistcoat-pocket, or a watch to take out
-of it, and burning with curiosity, she ran across the field after it, and
-was just in time to see it pop down a large rabbit-hole under the hedge.
+\subsection*{Communication}
+Communication between the group and our mentors was through the Discord application. We started with just one channel for communication but ended up with multiple channels for different purposes. We had channels for internal team communication, resources and one for mentor communication (this became necessary so that they could mute the other channels and not be bothered with irrelevant notifications) where we confirmed meeting times and informed each other about any absences. We were happy with this medium of communication because it allowed us to quickly share resources and we were familiar with the app overall.
+\\\\
+Customer communication in the very beginning was through email, but then we created a Slack group for the team members and customer where we could arrange and confirm meeting times. The team member who had been appointed as customer liaison was mostly responsible for these communications and delivering any updates and other requested material to the customer.
 
-In another moment down went Alice after it, never once considering how in
-the world she was to get out again.
+\subsection*{Project planning}
+A large portion of the project planning was during the setup period. In order to properly plan what we needed to get done during the project and how we should approach it, we first needed to familiarise ourselves with the unfamiliar concepts and technologies that the project required. However, because we realized that the requirements and our understanding of them would change throughout the project, we knew that project planning would be a continuous effort and not a one-time thing. More planning was required after each official meeting with the customer where we gathered and clarified requirements. Sometimes we even had to take a few steps back and redo something we had misunderstood based on previous information or the lack of it.
+\\\\
+One example of this is when during our official client meeting in December we demoed our progress on the game. We showed the user interface and explained the backend of the game we implemented so far.  During this, we realised that one aspect of the implementation was incorrect. We had implemented the game where we identify points on a large image instead of sectioning a large image and identifying the class of each section. Everything else in the implementation met the clients requirements, but we took any criticism very seriously and tried out best to meet the customer's wishes during the next sprint. Each progress demonstration meeting resulted in some shift in the project plan, which was expected as shifting goals and plans are characteristic to an agile working style. REFERENCE?
 
-The rabbit-hole went straight on like a tunnel for some way, and then
-dipped suddenly down, so suddenly that Alice had not a moment to think
-about stopping herself before she found herself falling down what seemed to
-be a very deep well.
+%==============================================================================
+\section{Requirements Gathering}
+\label{sec:requirements}
 
-Either the well was very deep, or she fell very slowly, for she had plenty
-of time as she went down to look about her, and to wonder what was going to
-happen next. First, she tried to look down and make out what she was coming
-to, but it was too dark to see anything: then she looked at the sides of
-the well, and noticed that they were filled with cupboards and
-book-shelves: here and there she saw maps and pictures hung upon pegs. She
-took down ajar from one of the shelves as she passed: it was labeled
-``ORANGE MARMALADE'' but to her great disappointment it was empty: she did
-not like to drop the jar, for fear of killing somebody underneath, so
-managed to put it into one of the cupboards as she fell past it.
+!!!!!!!!!! large section
+updated requirements 15.11.2017
 
-``Well!'' thought Alice to herself ``After such a fall as this, I shall think
-nothing of tumbling down-stairs! How brave they'll all think me at home!
-Why, I wouldn't say anything about it, even if I fell off the top of the
-house!'' (which was very likely true.)
+updated requirements 24.01.2018
 
-Down, down, down. Would the fall never come to an end? ``I wonder how many
-miles I've fallen by this time?'' she said aloud. ``I must be getting
-somewhere near the centre of the earth. Let me see: that would be four
-thousand miles down, I think-'' (for, you see, Alice had learnt several
-things of this sort in her lessons in the school-room, and though this was
-not a very good opportunity for showing off her knowledge, as there was no
-one to listen to her, still it was good practice to say it over) `` yes
-that's about the right distance -- but then I wonder what Latitude or
-Longitude I've got to?'' (Alice had not the slightest idea what Latitude
-was, or Longitude either, but she thought they were nice grand words to
-say.)
 
-Presently she began again. ``I wonder if I shall fall fight through the
-earth! How funny it'll seem to come out among the people that walk with
-their heads downwards! The antipathies, I think-'' (she was rather glad
-there was no one listening, this time, as it didn't sound at all the right
-word) ``but I shall have to ask them what the name of the country is, you
-know. Please, Ma'am, is this New Zealand? Or Australia?'' (and she tried to
-curtsey as she spoke- fancy, curtseying as you're falling through the air!
-Do you think you could manage it?) ``And what an ignorant little girl she'll
-think me for asking! No, it'll never do to ask: perhaps I shall see it
-written up somewhere.''
+(in beginning, only thought that game was to play against model, later realised that had more specific educational purpose)
+- openness of customer to our ideas
+-setup period
 
-Down, down, down. There was nothing else to do, so Alice soon began talking
-again. ``Dinah'll miss me very much to-night, I should think!'' (Dinah was
-the cat.) ``I hope they'll remember her saucer of milk at tea-time. Dinah,
-my dear! I wish you were down here with me! There are no mice in the air,
-I'm afraid, but you might catch a bat, and that's very like a mouse, you
-know. But do cats eat bats, I wonder?'' And here Alice began to get rather
-sleepy, and went on saying to herself, in a dreamy son of way, ``Do cats eat
-bats? Do cats eat bats?'' and sometimes ``Do bats eat cats?'' for, you see, as
-she couldn't answer either question, it didn't much matter which way she
-put it. She felt that she was dozing off, and had just begun to dream that
-she was walking hand in hand with Dinah, and was saying to her, very
-earnestly, ``Now, Dinah, tell me the truth: did you ever eat a bat?'' when
-suddenly, thump! thump! down she came upon a heap of sticks and dry leaves,
-and the fall was over.
-
-Alice was not a bit hurt, and she jumped up on to her feet in a moment: she
-looked up, but it was all dark overhead: before her was another long
-passage, and the White Rabbit was still in sight, hurrying down it. There
-was not a moment to be lost: away went Alice like the wind, and was just in
-time to hear it say, as it turned a comer, ``Oh my ears and whiskers, how
-late it's getting!'' She was close behind it when she turned the comer, but
-the Rabbit was no longer to be seen: she found herself in a long, low hall,
-which was lit up by a row of lamps hanging from the roof.
-
-There were doors all round the hall, but they were all locked; and when
-Alice had been all the way down one side and up the other, trying every
-door, she walked sadly down the middle, wondering how she was ever to get
-out again.
-
-Suddenly she came upon a little three-legged table, all made of solid
-glass: there was nothing on it but a tiny golden key, and Alice's first
-idea was that this might belong to one of the doors of the hall; but, alas!
-either the locks were too large, or the key was too small, but at any rate
-it would not open any of them. However, on the second time round, she came
-upon a low curtain she had not noticed before, and behind it was a little
-door about fifteen inches high: she tried the little golden key in the
-lock, and to her great delight it fitted!
-
-\input{figures/alice}
-
-Alice opened the door (see Figure \ref{fig:alice}) and found that it
-led into a small passage, not much larger than a rat-hole: she knelt
-down and looked along the passage into the loveliest garden you ever
-saw. How she longed to get out of that dark hall, and wander about
-among those beds of bright flowers and those cool fountains, but she
-could not even get her head through the doorway; ``and even if my head
-would go through,'' thought poor Alice, ``it would be of very little
-use without my shoulders. Oh, how I wish I could shut up like a
-telescope! I think I could, if I only knew how to begin.'' For, you
-see, so many out-of-the- way things had happened lately, that Alice
-had begun to think that very few things indeed were really impossible.
+-sprints
 
 %==============================================================================
 
-\section{Choice of Colours}
-\label{design}
+\section{Agile Programming and Teamwork}
+\label{sec:agile}
 
-The following diagrams (especially figure \ref{fig:alice}) illustrate the
-process...
+
+\subsection*{Retrospectives}
+
+We used retrospectives about every 2 weeks (during and after each sprint) as a way to reflect on what we had done well in the sprint and what could be improved. We used the start-stop-continue structure for all retrospectives and then came up with an action plan to sum up how we could make the best changes in the future.
+\\\\
+The problems in the beginning were mostly related to timing and communication - the team hadn't established a set meeting time yet and as a result the team wasn't in the same place at the same time when it was needed. There was confusion over individual responsibilities and about what everyone was working on. The plan was to set up a more concrete schedule to follow so that the team meeting time wouldn't be wasted on waiting for others to show up. We solved the problem regarding confusion about responsibilities by making use of Gitlab: we created issues and started to actively use the kanban structure that Gitlab provided. Additional structure for client meetings was solved by planning on sitting down with the team before client meetings and planning the meeting structure and how we would talk to the client (splitting questions, showing demonstrations etc).
+\\\\
+After sprint 1 we still had some problems with timing, but also with how to split the work. A lot of the tasks were very large and they required splitting to be more manageable, and we realized that communication had to be improved between development of the neural network and the game. We were happier with team communication and how all members were getting along and helping each other.
+After sprint 2 the action plan was to start weekly standups with the team to increase clarity of individual progress and splitting of tasks. We also planned to meet more frequently so that work would be done more regularly throughout the sprint as opposed to small bursts. There were some problems with not informing team members of absences in time, and we aimed to start making use of communication channels more effectively to avoid confusion.
+\\\\
+
+
+\subsection*{Standups}
+\subsection*{Planning poker}
+\subsection*{Team communication}
+
+
 
 %==============================================================================
-\section{Managing Dress Sense}
-\label{managing}
-
-In this chapter, we describe how the implemented the system.
-
-%------------------------------------------------------------------------------
-\section{Kangaroo Practices}
-
-
-
-% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-\section{Knots and Bundles}
+\section{Quality Assurance and Process Improvement}
 \label{sec:managing}
 
+include formative assessment
 
 %------------------------------------------------------------------------------
 \section{Conclusions}
@@ -216,6 +158,7 @@ based on the specific issues discussed in previous sections.  Reflect
 on the extent to which these lessons could be generalised to other
 types of software project.  Relate the wider lessons to others
 reported in case studies in the software engineering literature.
+
 
 %==============================================================================
 \bibliographystyle{plain}
