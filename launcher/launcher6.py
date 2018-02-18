@@ -1,7 +1,7 @@
 from tkinter import *
 from tkinter import messagebox
 from PIL import Image, ImageTk
-from tkFileDialog import askopenfilename
+from tkinter.filedialog import askopenfilename
 import os
 import subprocess
 
@@ -17,7 +17,7 @@ CLASSNAMES = ["burns", "cloud", "mines"]
 
 ######################################################################################
 def getImage(imgPath):
-	print "imgPath: ", imgPath
+	print("imgPath: ", imgPath)
 	img = Image.open(imgPath).resize((150, 150), Image.ANTIALIAS)
 	img = ImageTk.PhotoImage(img)
 	return img
@@ -39,7 +39,7 @@ def updateLsbox():
 	            itemToAdd = "Owner: " + owner + "| " + "ImgName: " + imgname
 	            lsbox.insert(END,imgname)
 
-	print "IMAGES_DICT: ", IMAGES_DICT
+	print("IMAGES_DICT: ", IMAGES_DICT)
 
 ######################################################################################
 def launchGame():
@@ -73,7 +73,7 @@ def upload():
 	beforePathName = PATH+imgFile
 	afterPathName = PATH+"players_"+uploadNameEntryText+imgFile[-4:]
 
-	print "upload entries: ", uploadNameEntryText, uploadPathEntryText, imgFile
+	print("upload entries: ", uploadNameEntryText, uploadPathEntryText, imgFile)
 
 	subprocess.call(["cp", uploadPathEntryText, PATH])
 	subprocess.call(["mv", beforePathName, afterPathName])
@@ -134,7 +134,7 @@ def select():
 	imgActivePath = IMAGES_DICT[imgNameSelected][0]
 	ownerImg = IMAGES_DICT[imgNameSelected][1]
 
-	print "at select: ", selection, imgNameSelected, imgActivePath, ownerImg
+	print("at select: ", selection, imgNameSelected, imgActivePath, ownerImg)
 
 	toWrite = ""
 
@@ -185,16 +185,16 @@ def rename():
 	        file = os.path.join(dirname, filename)
         
         	beforePath = file
-        	print "beforePath: ", beforePath
+        	print("beforePath: ", beforePath)
 
         	if (file[-4:] == ".txt") and (file[file.rfind('/')+9:-10]==imgNameSelected):
         		
         		afterPath = PATH + ownerImg + '_' + renameEntryText + file[-10:]
-        		print "afterPath: ", afterPath
+        		print("afterPath: ", afterPath)
         		subprocess.call(["mv", beforePath, afterPath])
         	elif file[-4:] != ".txt" and (file[file.rfind('/')+9:-4]==imgNameSelected):		
         		afterPath = PATH + ownerImg + '_' + renameEntryText + file[-4:]
-        		print "afterPath: ", afterPath
+        		print("afterPath: ", afterPath)
         		subprocess.call(["mv", beforePath, afterPath])
 	updateLsbox()
 ######################################################################################
