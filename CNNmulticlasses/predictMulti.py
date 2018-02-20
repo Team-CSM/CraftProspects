@@ -12,39 +12,42 @@ model = load_model(model_path)
 model.load_weights(model_weights_path)
 
 def main():
-    IMAGE = 'test.jpg'
-    location = './' + IMAGE.split('.')[0] + '_' + 'slices'
+    IMAGE = 'image2.jpg'
+    NAME = IMAGE.split('.')[0]
+    location = './' + NAME + '_data'
 
     if not os.path.exists(location):
-        slice(2025, IMAGE, location)
+        slice(900, IMAGE, location + '/slices')
 
     imgstr = []
 
     # Add all slices to the imgstr
-    for root, dirs, filenames in os.walk(location):
+    for root, dirs, filenames in os.walk(location + '/slices'):
         for f in filenames:
             if (f.startswith('.') == False):
-                imgstr.append(location + '/' + f)
+                imgstr.append(location + '/slices' + '/' + f)
 
     print("imgstr: ", len(imgstr))
 
     class_to_name = ["clear_primary", "cloudy", "mine", "slash_burn"]
+    outloc = location + '/out'
+    
+    
 
-    # Getting predictions for all the slices from the model
-    predict(imgstr, class_to_name)
-
-    outloc = './outslices'
     if not os.path.exists(outloc):
     # Finally splitting the input image into 9 slices, with set ratio to be input to game.
         slice(9, IMAGE, outloc)
         
+        # Getting predictions for all the slices from the model
+        predict(imgstr, class_to_name, outloc)
         print("resizing...")
         for root, dirs, filenames in os.walk(outloc):
             for f in filenames:
-                im = Image.open(outloc + '/' + f)
-                nx, ny = im.size
-                im = im.resize((int(nx*1.4), ny), Image.BICUBIC)
-                im.save(outloc + '/' + f)
+                if (f.endswith('.txt') == False):
+                    im = Image.open(outloc + '/' + f)
+                    nx, ny = im.size
+                    im = im.resize((int(ny*1.4), ny), Image.BICUBIC)
+                    im.save(outloc + '/' + f)
 
 
 def slice(number, IMAGE, location):
@@ -54,7 +57,7 @@ def slice(number, IMAGE, location):
     tiles = image_slicer.slice(IMAGE, number, save=False)
     image_slicer.save_tiles(tiles, directory=location + '/', prefix='slice')
 
-def predict(imgstr, class_to_name):
+def predict(imgstr, class_to_name, outloc):
     print("predicting...")
     for image in imgstr:
         x = load_img(image, target_size=(img_width,img_height))
@@ -71,8 +74,8 @@ def predict(imgstr, class_to_name):
             out1 = class_to_name[pred]
 
             #write coordinates to log files to help out with input to game
-            f = open(out1+".log", "a")
-            f.write(image[image.rfind('/')+7:-4].replace("_", ",") + "\n")
+            f = open(outloc + "/" + out1+".txt", "a")
+            f.write(image[image.rfind('/')+7:-4].replace("_", ",") + "\r\n")
             f.close() 
 
 main()
