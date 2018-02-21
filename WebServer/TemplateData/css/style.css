@@ -136,7 +136,7 @@ h4{
   }
   ul.scanlines {
     position: absolute;
-    width: 100%;
+    width: 100vw;
   }
 
   ul .jpg {
@@ -149,3 +149,45 @@ h4{
     background: #212121;
     background-size: cover;
   }
+
+  .parallax-container {
+    min-height: 380px;
+    height: auto;
+    color: rgba(255,255,255,.9);
+  }
+
+  img.responsive-img{ 
+      height: 75px;
+      width: 75px;
+      background-size: contain;
+  }
+
+.craig{
+    background: url(../../TemplateData/craig.jpg);
+}
+
+.adrian{
+    background: url(../../TemplateData/Adrian.jpg);
+}
+
+.dan{
+    background: url(../../TemplateData/dan.jpg);
+}
+
+.eerika{
+    background: url(../../TemplateData/eerika.jpg);
+}
+
+.frances{
+    background: url(../../TemplateData/frances.jpg);
+}
+
+.promo-example .responsive-img:hover{
+    transition: background 0.3s ease;
+    background: url(../../TemplateData/github.png);
+    background-size: contain;
+}
+
+.rev-depth{
+    box-shadow: 0 -8px 10px 1px rgba(0,0,0,0.14), 0 -3px 14px 2px rgba(0,0,0,0.12), 0 -5px 5px -3px rgba(0,0,0,0.3);
+}
