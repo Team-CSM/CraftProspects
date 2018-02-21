@@ -7,7 +7,6 @@ public class Clickscript : MonoBehaviour
 {
 
     public string sceneLocate;
-    public GameObject button;
 
     void Start()
     {
