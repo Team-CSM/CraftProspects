@@ -1,21 +1,15 @@
-import Tkinter as tk
+from tkinter import *
+root = Tk()
 
-class SampleApp(tk.Tk):
-    def __init__(self, *args, **kwargs):
-        tk.Tk.__init__(self, *args, **kwargs)
-        lb = tk.Listbox(self)
-        lb.insert("end", "one")
-        lb.insert("end", "two")
-        lb.insert("end", "three")
-        lb.bind("<Double-Button-1>", self.OnDouble)
-        lb.pack(side="top", fill="both", expand=True)
+def make_label(master, x, y, h, w, *args, **kwargs):
+    f = Frame(master, height=h, width=w)
+    f.pack_propagate(0) # don't shrink
+    f.place(x=x, y=y)
+    label = Label(f, *args, **kwargs)
+    label.pack(fill=BOTH, expand=1)
+    return label
 
-    def OnDouble(self, event):
-        widget = event.widget
-        selection=widget.curselection()
-        value = widget.get(selection[0])
-        print "selection:", selection, ": '%s'" % value
+make_label(root, 10, 10, 10, 40, text='xxx', background='red')
+make_label(root, 30, 40, 10, 30, text='xxx', background='blue')
 
-if __name__ == "__main__":
-    app = SampleApp()
-    app.mainloop()
+root.mainloop()
