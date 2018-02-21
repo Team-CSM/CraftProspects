@@ -5,8 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class Quitscript : MonoBehaviour
 {
-
-    //public string sceneLocate;
     public GameObject button;
 
     void Start()
@@ -20,7 +18,6 @@ public class Quitscript : MonoBehaviour
     void OnMouseDown()
     {
         Application.Quit();
-        Debug.Log("CLICKED");
     }
 
 }
