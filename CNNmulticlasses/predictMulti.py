@@ -79,6 +79,3 @@ def predict(imgstr, class_to_name, outloc):
             f.close() 
 
 main()
-
-
-
