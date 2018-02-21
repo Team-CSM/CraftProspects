@@ -26,7 +26,6 @@ def getImage(imgPath):
 def updateLsbox():
 
 	lsbox.delete(0, END)
-
 	for dirname, dirnames, filenames in os.walk(PATH):
 	    for filename in filenames:
 	        file = os.path.join(dirname, filename)

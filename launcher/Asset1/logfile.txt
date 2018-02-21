@@ -1,0 +1,2 @@
+Asset1/creator_image3_cloud.txt
+Asset1/creator_image3.jpg
