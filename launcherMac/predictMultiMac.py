@@ -94,5 +94,5 @@ def predict(imgstr, class_to_name, dirPath):
             f.close() 
 
 
-main()
-
+if __name__ == '__main__':
+    main()
