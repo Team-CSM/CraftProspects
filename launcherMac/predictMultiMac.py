@@ -20,6 +20,7 @@ class_to_name = ["clear", "cloudy", "mine", "slash"]
 
 def main():
 
+
     imgPath = sys.argv[1] # python predictMulti.py ./players_money/orig.jpg
     dirPath = imgPath[:imgPath.rfind('/')+1]
 
@@ -75,8 +76,8 @@ def slice(number, IMAGE, location):
 def predict(imgstr, class_to_name, dirPath):
     print("predicting...")
     for image in imgstr:
+        
         x = load_img(image, target_size=(img_width,img_height))
-
         x = img_to_array(x)
         x = np.expand_dims(x, axis=0)
         x = x/255 # normalise

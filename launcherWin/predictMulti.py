@@ -15,18 +15,14 @@ model.load_weights(model_weights_path)
 
 class_to_name = ["clear", "cloudy", "mine", "slash"]
 
-# python predictMulti.py ./players_money/orig.jpg
-imgPath = sys.argv[1]
-dirPath = imgPath[:imgPath.rfind('\\')+1]
-dirPath = dirPath[1:]
-imgPath = imgPath[1:]
-#print ("PREDICTMULTI imgPath: ", imgPath)
-#print ("PREDICTMULTI dirPath: ", dirPath)
-
-
-
 def main():
+    imgPath = sys.argv[1]
+    dirPath = imgPath[:imgPath.rfind('\\')+1]
+    dirPath = dirPath[1:]
+    imgPath = imgPath[1:]
+    
     IMAGE = "."+imgPath
+    IMAGE = IMAGE[1:]
     # location = dirPath + IMAGE.split('.')[0] + '_' + 'slices'
     locationSlices = dirPath + 'slices'
     locationSlices = locationSlices.replace("/", "\\")
@@ -50,7 +46,7 @@ def main():
 
 
     # Getting predictions for all the slices from the model
-    predict(imgstr, class_to_name)
+    predict(imgstr, class_to_name, dirPath)
 
     # outloc = dirPath
     # if not os.path.exists(outloc):
@@ -74,22 +70,22 @@ def slice(number, IMAGE, location):
     # slice image for stream and add to the slices folder
     
     print("slicing...")
-    IMAGE = IMAGE[1:]
+    # IMAGE = IMAGE[1:]
     tiles = image_slicer.slice(IMAGE, number, save=False)
     print("save in folder:", location)
     image_slicer.save_tiles(tiles, directory=location, prefix='slice')
     # image_slicer.save_tiles(tiles, directory=location)
 
 
-def predict(imgstr, class_to_name):
+def predict(imgstr, class_to_name, dirPath):
     print("predicting...")
     for image in imgstr:
+        
         x = load_img(image, target_size=(img_width,img_height))
-
         x = img_to_array(x)
         x = np.expand_dims(x, axis=0)
-        # normalise
-        x = x/255
+        x = x/255 # normalise
+
         
         predictions = model.predict(x) #predictions in each class
         pred = np.argmax(predictions[0]) #winner index
@@ -103,5 +99,6 @@ def predict(imgstr, class_to_name):
             f.close() 
 
 
-main()
+if __name__ == '__main__':
+    main()
 

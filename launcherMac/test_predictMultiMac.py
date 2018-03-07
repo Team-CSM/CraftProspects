@@ -55,6 +55,7 @@ class test_predictMultiMac(unittest.TestCase):
             coordinates_list.extend(text.split(','))
         
         self.assertEqual(len(coordinates_list),number)
+        shutil.rmtree("output/text/")
         shutil.rmtree("output/")
 
 
