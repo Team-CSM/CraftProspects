@@ -12,16 +12,17 @@ model.load_weights(model_weights_path)
 
 class_to_name = ["clear", "cloudy", "mine", "slash"]
 
-# python predictMulti.py ./players_money/orig.jpg
-imgPath = sys.argv[1]
-dirPath = imgPath[:imgPath.rfind('/')+1]
+
 
 # print ("imgPath: ", imgPath)
 # print ("dirPath: ", dirPath)
 
 
-
 def main():
+
+    imgPath = sys.argv[1] # python predictMulti.py ./players_money/orig.jpg
+    dirPath = imgPath[:imgPath.rfind('/')+1]
+
     IMAGE = imgPath
     # location = dirPath + IMAGE.split('.')[0] + '_' + 'slices'
     locationSlices = dirPath + 'slices'
@@ -43,7 +44,7 @@ def main():
 
 
     # Getting predictions for all the slices from the model
-    predict(imgstr, class_to_name)
+    predict(imgstr, class_to_name, dirPath)
 
     # outloc = dirPath
     # if not os.path.exists(outloc):
@@ -71,15 +72,15 @@ def slice(number, IMAGE, location):
     # image_slicer.save_tiles(tiles, directory=location)
 
 
-def predict(imgstr, class_to_name):
+def predict(imgstr, class_to_name, dirPath):
     print("predicting...")
     for image in imgstr:
         x = load_img(image, target_size=(img_width,img_height))
 
         x = img_to_array(x)
         x = np.expand_dims(x, axis=0)
-        # normalise
-        x = x/255
+        x = x/255 # normalise
+
         
         predictions = model.predict(x) #predictions in each class
         pred = np.argmax(predictions[0]) #winner index
