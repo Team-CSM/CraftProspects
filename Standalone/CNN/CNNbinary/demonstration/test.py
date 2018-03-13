@@ -11,6 +11,10 @@ imglist = []
 window = tk.Tk()
 window.withdraw()
 
+# For usage, change MODEL_LOCATION and CSV_LOCATION to = "<.H5 OR CSV FILE PATH>"
+MODEL_LOCATION = ""
+CSV_LOCATION = ""
+
 # Since binary classification, only 2 class names required. 
 class_to_name = ["cloudy", "clear"]
 
@@ -68,15 +72,13 @@ def restart_program():
 
 # returns the actual values for the file, specified in the given CSV
 def getvals(filename):
-    csvFile=open("/Users/craig/Documents/tp3/split/test/train_v2.csv")
+    csvFile=open(CSV_LOCATION)
     reader=csv.reader(csvFile)
     for item in reader:
         if item[0] == filename:
             return item[1]
     return "None"
 
-# For usage, change MODEL_LOCATION to the form MODEL_LOCATION = "<.H5 FILE PATH>"
-MODEL_LOCATION = "/Users/craig/Documents/tp3/CSM-project/Standalone/CNN/CNNbinary/demonstration/testing.h5"
 model = modelLoader(MODEL_LOCATION)
 scaledImage = initImage(filename)
 choice, out1, out2 = predictImage(scaledImage, model)
