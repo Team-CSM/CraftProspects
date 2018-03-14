@@ -33,8 +33,8 @@ test_syntax:
     
   when: on_success
   
-test_launchermac:
-  stage: test
-  script:
-    - python -m unittest CI/test_launcherMac.py
-  when: on_success
+# test_launchermac:
+#   stage: test
+#   script:
+#     - python -m unittest CI/test_launcherMac.py
+#   when: on_success
