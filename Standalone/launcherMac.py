@@ -35,12 +35,6 @@ CURSORBTN = "center_ptr"
 
 ############################################################ Variables needed when predicting
 img_width, img_height = 64, 64
-
-# model_path = os.path.join(application_path, 'model.h5')
-# model_weights_path = os.path.join(application_path, 'weights.h5')
-# model = load_model(model_path)
-# model.load_weights(model_weights_path)
-
 class_to_name = ["clear", "cloudy", "mine", "slash"]
 
 ######################################################################################
@@ -70,8 +64,14 @@ def startPredicting(imgPathe):
 			if (f.startswith('.') == False):
 				imgstr.append(locationSlices + '/' + f)
 
+
+	model_path = os.path.join(application_path, 'model.h5')
+	model_weights_path = os.path.join(application_path, 'weights.h5')
+	model = load_model(model_path)
+	model.load_weights(model_weights_path)
+
 	# Getting predictions for all the slices from the model
-	predict(imgstr, class_to_name, dirPath)
+	predict(imgstr, class_to_name, dirPath,model)
 
 	# Finally splitting the input image into 9 slices, with set ratio to be input to game.
 	slice(9, IMAGE, dirPath)
@@ -98,19 +98,14 @@ def slice(number, IMAGE, location):
 	image_slicer.save_tiles(tiles, directory=location, prefix='slice')
 
 
-def predict(imgstr, class_to_name, dirPath):
+def predict(imgstr, class_to_name, dirPath,model):
 	'''
 	param imgstr = list of path of images in the slices folder.
 	Each slice is predicted a class.
 	Creates a textfile for each class that is predicted.
 	coordinates of the slice is appended in the corresponding text file.
 	'''
-	model_path = os.path.join(application_path, 'model.h5')
-	model_weights_path = os.path.join(application_path, 'weights.h5')
-	model = load_model(model_path)
-	model.load_weights(model_weights_path)
-
-
+	
 	print("predicting...")
 	for image in imgstr:
 		x = load_img(image, target_size=(img_width,img_height))
