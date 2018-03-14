@@ -9,7 +9,8 @@ from launcherMac.launcherMac import getImage
 
 
 class test_launcherMac(unittest.TestCase):
-    
+    '''Tests the mac launcher of our application'''
+
     # tests if number of slices created is equal to the number it was asked to be sliced.
     def testSliceNumber(self):
         if not os.path.exists("output/"):
@@ -61,6 +62,7 @@ class test_launcherMac(unittest.TestCase):
         shutil.rmtree("output/text/")
         shutil.rmtree("output/")
 
+    # tests if an image is loaded correctly. 
     def testGetImage(self):
         root = Tk()
         imagepath = "CI/orig.jpg"
