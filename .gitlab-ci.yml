@@ -13,13 +13,15 @@
 #     - python CI/syntaxChecks.py
 
 
-image: blang/latex
-
+variables:
+  GIT_DEPTH: "3"
+    
 stages:
   - build
   - test
 
 build:
+  image: blang/latex
   script:
     - latexmk -pdf -cd docs/dissertation/dissertation.tex
   artifacts:
@@ -27,6 +29,7 @@ build:
       - "*.pdf"
 
 test_syntax:
+  image: required
   stage: test
   script:
     - python CI/syntaxChecks.py
