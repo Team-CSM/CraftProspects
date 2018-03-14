@@ -10,47 +10,78 @@ from PIL import Image, ImageTk
 imglist = []
 window = tk.Tk()
 window.withdraw()
-filename = askopenfilename() # show an "Open" dialog box and return the path to the selected file
-imglist.append(filename)
-model = load_model('/Users/craig/Documents/tp3/CSM-project/CNN/demonstration/testing.h5')
-model.compile(loss='binary_crossentropy',
+
+# For usage, change MODEL_LOCATION and CSV_LOCATION to = "<.H5 OR CSV FILE PATH>"
+MODEL_LOCATION = ""
+CSV_LOCATION = ""
+
+# Since binary classification, only 2 class names required. 
+class_to_name = ["cloudy", "clear"]
+
+# Show an "Open" dialog box for user to select image, and return the path to the selected file
+filename = askopenfilename()
+
+def modelLoader(model_loc):
+    """Given the path to a .h5 model file, loads and compiles the model."""
+    model = load_model(model_loc)
+    model.compile(loss='binary_crossentropy',
               optimizer='rmsprop',
               metrics=['accuracy'])
+    return model
 
-size = 150, 150
-
-class_to_name = ["clear", "cloudy"]
-for image in imglist:
-    img = Image.open(image)
+def initImage(filename):
+    """Converts image to suitable format to be input into the model. 
+    Rescales by 1/255 to account for RGB value coefficients."""
+    size = 150, 150
+    # Convert image to suitable format to be input into the model. 
+    # Rescale by 1/255 to account for RGB value coefficients.
+    img = Image.open(filename)
     img = img.resize(size, Image.ANTIALIAS)
     img = img.convert('RGB')
     x = np.asarray(img, dtype='float32')
     x = np.expand_dims(x, axis=0)
     x = x/255
-    choice = model.predict(x)
-    out1 = class_to_name[model.predict_classes(x)[0][0]]
+    return x
+
+def predictImage(image, model):
+    """Given an augmented image, the function returns the prediction from the model, 
+    the class name of the prediction and the certainty percentage."""
+    # Get the prediction from the model and obtain the class name.
+    choice = model.predict(image)
+    print(choice)
+    classString = class_to_name[model.predict_classes(image)[0][0]]
+
+    # Checking if the prediction is substantial evidence to use that class.
+    # Display as certainty percentage
     if (choice >= 0.5):
-        out2 = str(round(choice[0][0]*100, 2)) + "%"
+        certainty= str(round(choice[0][0]*100, 2)) + "%"
+    # If not display as uncertainty percentage
     else:
-        out2 = str(round((1 - choice[0][0])*100, 2)) + "%"
+        certainty = str(round((1 - choice[0][0])*100, 2)) + "%"
+    return choice, classString, certainty
 
-#Example: clear_primary to Clear Primary
-def format(out1):
-    return out1.replace("_", " ").title()
+def format(category):
+    """Given a category name, returns the category name with spaces instead of underscores, 
+    and formatted to Title Case. clear_primary -> Clear Primary"""
+    return category.replace("_", " ").title()
 
-#If a user wants to select an other image, just restart the program
 def restart_program():
+    """Restarts the current program, so user can select another image to predict."""
     python = sys.executable
     os.execl(python, python, * sys.argv)
 
-# returns the actual values for the file, specified in the given CSV
 def getvals(filename):
-    csvFile=open("/Users/craig/Documents/tp3/split/data/train_v2.csv")
+    """Returns the actual image classification, specified in the given CSV. If not present "None" returned."""
+    csvFile=open(CSV_LOCATION)
     reader=csv.reader(csvFile)
     for item in reader:
         if item[0] == filename:
             return item[1]
     return "None"
+
+model = modelLoader(MODEL_LOCATION)
+scaledImage = initImage(filename)
+choice, out1, out2 = predictImage(scaledImage, model)
 
 #getting the actual classes for the image
 check = (getvals(os.path.basename(filename).split(".")[0]))
