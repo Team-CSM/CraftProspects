@@ -35,10 +35,12 @@ CURSORBTN = "center_ptr"
 
 ############################################################ Variables needed when predicting
 img_width, img_height = 64, 64
-model_path = os.path.join(application_path, 'model.h5')
-model_weights_path = os.path.join(application_path, 'weights.h5')
-model = load_model(model_path)
-model.load_weights(model_weights_path)
+
+# model_path = os.path.join(application_path, 'model.h5')
+# model_weights_path = os.path.join(application_path, 'weights.h5')
+# model = load_model(model_path)
+# model.load_weights(model_weights_path)
+
 class_to_name = ["clear", "cloudy", "mine", "slash"]
 
 ######################################################################################
@@ -103,6 +105,12 @@ def predict(imgstr, class_to_name, dirPath):
 	Creates a textfile for each class that is predicted.
 	coordinates of the slice is appended in the corresponding text file.
 	'''
+	model_path = os.path.join(application_path, 'model.h5')
+	model_weights_path = os.path.join(application_path, 'weights.h5')
+	model = load_model(model_path)
+	model.load_weights(model_weights_path)
+
+
 	print("predicting...")
 	for image in imgstr:
 		x = load_img(image, target_size=(img_width,img_height))
