@@ -6,7 +6,6 @@ from Standalone.launcherMac import slice
 from Standalone.launcherMac import predict
 from Standalone.launcherMac import class_to_name
 import numpy as numpy
-import h5py
 from keras.models import Sequential, load_model
 from keras.layers import Conv2D, MaxPooling2D
 from keras.layers import Activation, Dropout, Flatten, Dense
