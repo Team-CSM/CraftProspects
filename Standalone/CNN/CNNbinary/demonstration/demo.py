@@ -70,8 +70,8 @@ def restart_program():
     python = sys.executable
     os.execl(python, python, * sys.argv)
 
-# returns the actual values for the file, specified in the given CSV
 def getvals(filename):
+    """Returns the actual image classification, specified in the given CSV. If not present "None" returned."""
     csvFile=open(CSV_LOCATION)
     reader=csv.reader(csvFile)
     for item in reader:
