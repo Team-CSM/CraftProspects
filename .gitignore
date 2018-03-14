@@ -70,3 +70,6 @@ sysinfo.txt
 *.unitypackage
 *.exe
 *.app
+
+# Neural Network
+*.h5
