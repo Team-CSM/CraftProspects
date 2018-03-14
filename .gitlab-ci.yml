@@ -15,6 +15,9 @@
 
 image: blang/latex
 
+variables:
+  GIT_DEPTH: "3"
+    
 stages:
   - build
   - test
