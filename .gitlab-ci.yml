@@ -35,13 +35,10 @@ test_syntax:
     - python CI/syntaxChecks.py
   when: on_success
   
-
-
 test_launchermac:
   stage: test
   before_script:
-    - usermod -a -G docker $USER
-    - docker pull ktzr/keras
+    - sudo docker pull ktzr/keras
   script:
     - python3 -m unittest CI/test_launcherMac.py 
   when: on_success
