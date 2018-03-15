@@ -42,7 +42,7 @@ class test_launcherMac(unittest.TestCase):
             list[var] = "output2/"+list[var]
         
         predict(list,class_to_name,"output2/text/",load_model("CI/model.h5"))
-        list = os.listdir("output/2text/")
+        list = os.listdir("output2/text/")
         
         boolean = False
         for file in list:
