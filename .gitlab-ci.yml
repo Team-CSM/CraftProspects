@@ -13,7 +13,6 @@
 #     - python CI/syntaxChecks.py
 
 image: ktzr/keras
-imagePullPolicy: Always
 
 variables:
   GIT_DEPTH: "3"
