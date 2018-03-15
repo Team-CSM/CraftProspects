@@ -42,3 +42,9 @@ test_launchermac:
   script:
     - python3 -m unittest CI/test_launcherMac.py 
   when: on_success
+  
+test_categorisedata:
+  stage: test
+  script:
+    - python3 -m unittest CI/test_categorisedata.py
+  when: on_success
