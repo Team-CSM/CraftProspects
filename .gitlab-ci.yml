@@ -35,13 +35,20 @@ test_syntax:
     - python CI/syntaxChecks.py
   when: on_success
   
-test_launchermac:
+test_launcherMac:
   stage: test
   image: ktzr/keras
   script:
     - python3 -m unittest CI/test_launcherMac.py 
   when: on_success
   
+test_launcherWin:
+  stage: test
+  image: ktzr/keras
+  script:
+    - python3 -m unittest CI/test_launcherWin.py
+  when: on_success
+
 test_categorisedata:
   stage: test
   image: ktzr/keras
