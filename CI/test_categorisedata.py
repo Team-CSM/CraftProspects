@@ -95,7 +95,7 @@ class test_categorisedata(unittest.TestCase):
             else:
                 answer = False
        
-       self.assertTrue(answer)
+        self.assertTrue(answer)
 
     
 
