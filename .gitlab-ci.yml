@@ -44,5 +44,5 @@ test_launchermac:
     - sudo pip install cython 
     - sudo apt-get install libhdf5-dev -y 
     - sudo pip install h5py 
-    - python3 -m unittest CI/test_launcherMac.py -y
+    - python3 -m unittest CI/test_launcherMac.py 
   when: on_success
