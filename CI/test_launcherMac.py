@@ -57,7 +57,7 @@ class test_launcherMac(unittest.TestCase):
         #test the coordinates:
         coordinates_list = []
         for file in list:
-            open("output2/text/"+file, "r") as file_object:
+            with open("output2/text/"+file, "r") as file_object:
                 text = file_object.read()
                 coordinates_list.extend(text.split(','))
         
