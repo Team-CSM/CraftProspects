@@ -1,0 +1,9 @@
+image_name,tags
+train_0,clear primary
+train_1,cloudy
+train_2,artisinal_mine
+train_3,slash_burn
+train_4,clear primary artisinal_mine
+train_5,clear primary artisinal_mine
+train_6, slash_burn
+train_7, artisinal_mine
