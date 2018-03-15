@@ -87,7 +87,6 @@ class test_categorisedata(unittest.TestCase):
                 if var in repeat_dict:
                     repeat_dict[var] = repeat_dict[var] + 1
         
-        print(repeat_dict)
         for key in repeat_dict.keys():
             
             if repeat_dict[key] == 1:
