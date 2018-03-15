@@ -13,6 +13,7 @@
 #     - python CI/syntaxChecks.py
 
 image: ktzr/keras
+imagePullPolicy: Always
 
 variables:
   GIT_DEPTH: "3"
@@ -37,7 +38,6 @@ test_syntax:
   
 test_launchermac:
   stage: test
-  pull_policy: always
   script:
     - python3 -m unittest CI/test_launcherMac.py 
   when: on_success
