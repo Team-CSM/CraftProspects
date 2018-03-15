@@ -1,7 +1,6 @@
 import unittest 
 import os 
 import shutil
-from tkinter import * 
 from Standalone.launcherMac import slice
 from Standalone.launcherMac import predict
 from Standalone.launcherMac import class_to_name
