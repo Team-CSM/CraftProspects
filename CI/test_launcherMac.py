@@ -48,16 +48,16 @@ class test_launcherMac(unittest.TestCase):
             else:
                 boolean = False
         self.assertEqual(boolean,True)
-
+    
         #test the coordinates:
         coordinates_list = []
         for file in list:
             file_object = open("text/"+file, "r")
             text = file_object.read()
             coordinates_list.extend(text.split(','))
-            file_object.close()
+            file_object.clos()
         
-        self.assertEqual(len(coordinates_list),number)
+        self.assertEqual(len(coordinates_list),20)
 
 
     
