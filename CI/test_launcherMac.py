@@ -21,6 +21,7 @@ class test_launcherMac(unittest.TestCase):
         number = 20
         slice(number,imagepath,"output/")
         list = os.listdir("output/")
+        print(list)
         number_files = len(list)
         shutil.rmtree("output/")
         self.assertEqual(number,number_files)
@@ -82,7 +83,7 @@ class test_launcherMac(unittest.TestCase):
                 boolean = True
             else:
                 boolean = False
-        self.assertEqual(boolean,True)
+        self.assertEqual(True,boolean)
 
         #test the coordinates:
         coordinates_list = []
