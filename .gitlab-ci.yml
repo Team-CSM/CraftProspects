@@ -44,7 +44,7 @@ test_syntax:
 #   when: on_success
 
 
-test_launcherMac:
+test_launchermac:
   stage: test
   image: ktzr/keras
   script:
