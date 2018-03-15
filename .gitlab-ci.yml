@@ -52,5 +52,5 @@ test_prediction:
   stage: test
   image: ktzr/keras
   script:
-    - python3 -m unittest CI/test_prediction.oy
+    - python3 -m unittest CI/test_prediction.py
   when: on_success
