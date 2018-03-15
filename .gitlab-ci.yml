@@ -36,12 +36,12 @@ test_syntax:
   when: on_success
   
 
-test_launcherWin:
-  stage: test
-  image: ktzr/keras
-  script:
-    - python3 -m unittest CI/test_launcherWin.py
-  when: on_success
+# test_launcherWin:
+#   stage: test
+#   image: ktzr/keras
+#   script:
+#     - python3 -m unittest CI/test_launcherWin.py
+#   when: on_success
 
 
 test_launcherMac:
