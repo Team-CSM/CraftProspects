@@ -37,13 +37,14 @@ test_syntax:
   
 test_launchermac:
   stage: test
+  image: ktzr/keras
   script:
     - python3 -m unittest CI/test_launcherMac.py 
   when: on_success
   
 test_categorisedata:
   stage: test
-  pull_policy: always
+  image: ktzr/keras
   script:
     - python3 -m unittest CI/test_categorisedata.py
   when: on_success
