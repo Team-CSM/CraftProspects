@@ -17,7 +17,7 @@ def populateDict(csvDir, classes):
 
 	for name in classes:
 		classFiles[name]=[]
-		csvFile=open("csvDir")
+		csvFile=open(csvDir)
 		reader=csv.reader(csvFile)
 
 	for row in reader:
