@@ -8,6 +8,7 @@ import numpy as numpy
 from keras.models import Sequential, load_model
 from keras.layers import Conv2D, MaxPooling2D
 from keras.layers import Activation, Dropout, Flatten, Dense
+import h5py
 
 class test_launcherMac(unittest.TestCase):
     '''Tests the mac launcher of our application'''
