@@ -12,6 +12,7 @@
 #     - pip install -r requirements.txt
 #     - python CI/syntaxChecks.py
 
+image: ktzr/keras
 
 variables:
   GIT_DEPTH: "3"
@@ -29,15 +30,13 @@ build:
       - "*.pdf"
 
 test_syntax:
-  image: required
   stage: test
   script:
     - python CI/syntaxChecks.py
-    
   when: on_success
   
-# test_launchermac:
-#   stage: test
-#   script:
-#     - python -m unittest CI/test_launcherMac.py
-#   when: on_success
+test_launchermac:
+  stage: test
+  script:
+    - python3 -m unittest CI/test_launcherMac.py
+  when: on_success
