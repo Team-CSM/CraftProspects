@@ -55,7 +55,7 @@ class test_launcherMac(unittest.TestCase):
             file_object = open("text/"+file, "r")
             text = file_object.read()
             coordinates_list.extend(text.split(','))
-            file_object.clos()
+            file_object.close()
         
         self.assertEqual(len(coordinates_list),20)
 
