@@ -38,6 +38,7 @@ test_syntax:
 test_launchermac:
   stage: test
   script:
+    - sudo easy_install pip
     - pip install h5py
     - python3 -m unittest CI/test_launcherMac.py
   when: on_success
