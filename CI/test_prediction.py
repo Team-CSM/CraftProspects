@@ -11,7 +11,7 @@ class test_prediction(unittest.TestCase):
     def test_slice_directory(self):
         slice_image("CI/orig.jpg",20)
         
-        if os.path.exists("output/"):
+        if os.path.exists("slices/"):
             answer = True
         
         else:
