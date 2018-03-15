@@ -35,6 +35,8 @@ test_syntax:
     - python CI/syntaxChecks.py
   when: on_success
   
+
+
 test_launchermac:
   stage: test
   script:
