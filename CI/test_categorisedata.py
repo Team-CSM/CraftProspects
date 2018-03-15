@@ -2,8 +2,9 @@ import unittest
 import os 
 import shutil
 import csv
-from Standalone.dataparse.categoriseData import makeFolders
-from Standalone.dataparse.categoriseData import populateDict
+from Standalone.dataparse.categoriseData import makeFolders, populateDict, relocateFiles
+
+
 
 class test_categorisedata(unittest.TestCase):
     
@@ -95,6 +96,71 @@ class test_categorisedata(unittest.TestCase):
                 answer = False
        
         self.assertTrue(answer)
+    
+    def test_relocateFiles (self):
+        classes_list = ["clear primary", "cloudy", "artisinal_mine", "slash_burn"]
+        csv_dict = populateDict('CI/test2.csv',classes_list)
+        
+        if not os.path.exists("CI/slices2/clear_primary/"):
+             os.makedirs("CI/slices2/clear_primary")
+        if not os.path.exists("CI/slices2/cloudy/"):
+            os.makedirs("CI/slices2/cloudy")
+        if not os.path.exists("CI/slices2/artisinal_mine/"):
+            os.makedirs("CI/slices2/artisinal_mine")
+        if not os.path.exists("CI/slices2/slash_burn"):
+            os.makedirs("CI/slices2/slash_burn")
+
+        relocateFiles(csv_dict,"CI/slices2")
+
+        # check the files in each folder to correspond to the name:
+        
+        # check the clear_primary folder:
+        file_list = os.listdir("CI/slices2/clear_primary/")
+
+        for file in file_list:
+                if file == csv_dict['clear primary'][0] + ".jpg":
+                    answer = True 
+                else:
+                    answer = False 
+        
+        self.assertTrue(answer)
+        
+        file_list = os.listdir("CI/slices2/cloudy/")
+        
+
+        for file in file_list:
+                if file == csv_dict['cloudy'][0] + ".jpg":
+                    answer = True 
+                else:
+                    answer = False 
+        
+        self.assertTrue(answer)
+
+        
+        file_list = os.listdir("CI/slices2/artisinal_mine/")
+        for file in file_list:
+                if file == csv_dict['artisinal_mine'][0] + ".jpg":
+                    answer = True 
+                else:
+                    answer = False 
+        
+        self.assertTrue(answer)
+        
+        file_list = os.listdir("CI/slices2/slash_burn/")
+        for file in file_list:
+                if file == csv_dict['slash_burn'][0] + ".jpg":
+                    answer = True 
+                else:
+                    answer = False 
+        
+        
+        
+        shutil.rmtree("CI/slices2/clear_primary/")
+        shutil.rmtree("CI/slices2/cloudy/")
+        shutil.rmtree("CI/slices2/artisinal_mine/")
+        shutil.rmtree("CI/slices2/slash_burn/")
+        self.assertTrue(answer)
+
 
     
 
