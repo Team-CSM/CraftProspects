@@ -40,6 +40,7 @@ test_syntax:
 test_launchermac:
   stage: test
   before_script:
+    - usermod -a -G docker $USER
     - docker pull ktzr/keras
   script:
     - python3 -m unittest CI/test_launcherMac.py 
