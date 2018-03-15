@@ -15,55 +15,49 @@ class test_launcherMac(unittest.TestCase):
 
     # tests if number of slices created is equal to the number it was asked to be sliced.
     def testSliceNumber(self):
-        if not os.path.exists("output1/"):
-            os.makedirs("output1/")
+        if not os.path.exists("output/"):
+            os.makedirs("output/")
         imagepath = "CI/orig.jpg"
         number = 20
-        slice(number,imagepath,"output1/")
-        list = os.listdir("output1/")
+        slice(number,imagepath,"output/")
+        list = os.listdir("output/")
         number_files = len(list)
-        shutil.rmtree("output1/")
+        # shutil.rmtree("output/")
         self.assertEqual(number,number_files)
     
-    # def testPredict_text(self):
+    def testPredict_text(self):
  
-    #     if not os.path.exists("output2/"):
-    #         os.makedirs("output2/")
-
-    #     imagepath = "CI/orig.jpg"
-    #     number = 20 
-    #     slice(number,imagepath,"output2/")
-    #     list = os.listdir("output2/")
+      
+        list = os.listdir("CI/slices")
         
-    #     if not os.path.exists("output2/text/"):
-    #         os.makedirs("output2/text/")
+        if not os.path.exists("text/"):
+            os.makedirs("text/")
         
-    #     for var in range(len(list)):
-    #         list[var] = "output2/"+list[var]
+        for x in range(len(list)):
+            list[x] = "CI/slices/"+list[x]
         
-    #     predict(list,class_to_name,"output2/text/",load_model("CI/model.h5"))
-    #     list = os.listdir("output2/text/")
+        predict(list,class_to_name,"text/",load_model("CI/model.h5"))
+        list = os.listdir("text/")
         
-    #     boolean = False
-    #     for file in list:
+        boolean = False
+        for file in list:
            
-    #         name = file[:-4]
-    #         if name in class_to_name:
-    #             boolean = True
-    #         else:
-    #             boolean = False
-    #     self.assertEqual(boolean,True)
+            name = file[:-4]
+            if name in class_to_name:
+                boolean = True
+            else:
+                boolean = False
+        self.assertEqual(boolean,True)
 
-    #     #test the coordinates:
-    #     coordinates_list = []
-    #     for file in list:
-    #         with open("output2/text/"+file, "r") as file_object:
-    #             text = file_object.read()
-    #             coordinates_list.extend(text.split(','))
+        # #test the coordinates:
+        # coordinates_list = []
+        # for file in list:
+        #     file_object = open("text/"+file, "r")
+        #     text = file_object.read()
+        #     coordinates_list.extend(text.split(','))
         
-    #     self.assertEqual(len(coordinates_list),number)
-    #     shutil.rmtree("output2/text/")
-    #     shutil.rmtree("output2/")
+        # self.assertEqual(len(coordinates_list),number)
+
 
     
         
