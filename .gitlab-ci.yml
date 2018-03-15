@@ -40,6 +40,5 @@ test_syntax:
 test_launchermac:
   stage: test
   script:
-    - apt-get install python3.6-tk -y
     - python3 -m unittest CI/test_launcherMac.py 
   when: on_success
