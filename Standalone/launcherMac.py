@@ -341,8 +341,8 @@ def main(): #run mianloop
 	'''
 	Will display the launcher and will continue displaying until the user closes it.
 	'''
-	import tkinter as TK
-	from tkinter import messagebox
+# 	import tkinter as TK
+# 	from tkinter import messagebox
 	root = TK.Tk()
 
 	root.title("Whack-A-Mine")
