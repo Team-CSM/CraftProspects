@@ -57,9 +57,9 @@ class test_launcherMac(unittest.TestCase):
         #test the coordinates:
         coordinates_list = []
         for file in list:
-            file_object = open("output2/text/"+file, "r")
-            text = file_object.read()
-            coordinates_list.extend(text.split(','))
+            open("output2/text/"+file, "r") as file_object:
+                text = file_object.read()
+                coordinates_list.extend(text.split(','))
         
         self.assertEqual(len(coordinates_list),number)
         shutil.rmtree("output2/text/")
