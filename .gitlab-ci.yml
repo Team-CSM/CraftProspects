@@ -40,9 +40,8 @@ test_syntax:
 test_launchermac:
   stage: test
   script:
-    - apt-get install sudo -y
-    - sudo pip install cython 
-    - sudo apt-get install libhdf5-dev -y 
-    - sudo pip install h5py 
+    - apt-get update
+    - apt-get install libhdf5-dev -y 
+    - pip3 install cython h5py 
     - python3 -m unittest CI/test_launcherMac.py 
   when: on_success
