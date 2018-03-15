@@ -22,7 +22,7 @@ class test_launcherMac(unittest.TestCase):
         slice(number,imagepath,"output/")
         list = os.listdir("output/")
         number_files = len(list)
-        # shutil.rmtree("output/")
+        shutil.rmtree("output/")
         self.assertEqual(number,number_files)
     
     def testPredict_text(self):
@@ -56,7 +56,7 @@ class test_launcherMac(unittest.TestCase):
             text = file_object.read()
             coordinates_list.extend(text.split(','))
             file_object.close()
-        
+        shutil.rmtree("text")
         self.assertEqual(len(coordinates_list),20)
 
 
