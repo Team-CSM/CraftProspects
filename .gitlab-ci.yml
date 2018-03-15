@@ -38,7 +38,7 @@ test_syntax:
 test_launchermac:
   stage: test
   script:
-    - apt-get install sudo 
-    - apt-get install libhdf5-dev
+    - apt-get install sudo -y
+    - apt-get install libhdf5-dev -y
     - python3 -m unittest CI/test_launcherMac.py
   when: on_success
