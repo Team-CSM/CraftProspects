@@ -41,6 +41,6 @@ test_launchermac:
   stage: test
   script:
     - apt-get install sudo -y
-    - apt-get install libhdf5-dev -y
+    - sudo apt-get install python-h5py -y
     - python3 -m unittest CI/test_launcherMac.py
   when: on_success
