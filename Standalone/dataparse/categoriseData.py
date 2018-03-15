@@ -71,18 +71,19 @@ def relocateFiles(dictionary,path):
 
 #--------------------------------------------------
 
-classes = ["clear primary", "cloudy", "artisinal_mine", "slash_burn"]
-csvDir = "train_v2.csv"
+if __name__ == '__main__':
+	classes = ["clear primary", "cloudy", "artisinal_mine", "slash_burn"]
+	csvDir = "train_v2.csv"
 
-classFiles = populateDict(csvDir, classes)
+	classFiles = populateDict(csvDir, classes)
 
-# only get save first 340 images in each class
-for cl in classFiles:
-	shuffle(classFiles[cl])
-	classFiles[cl] = classFiles[cl][:340]
+	# only get save first 340 images in each class
+	for cl in classFiles:
+		shuffle(classFiles[cl])
+		classFiles[cl] = classFiles[cl][:340]
 
-makeFolders(classes,"train-jpg")
-relocateFiles(classFiles,"train-jpg")
+	makeFolders(classes,"train-jpg")
+	relocateFiles(classFiles,"train-jpg")
 
 
 
