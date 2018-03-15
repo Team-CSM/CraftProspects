@@ -48,3 +48,9 @@ test_categorisedata:
   script:
     - python3 -m unittest CI/test_categorisedata.py
   when: on_success
+test_prediction:
+  stage: test
+  image: ktzr/keras
+  script:
+    - python3 -m unittest CI/test_prediction.oy
+  when: on_success
