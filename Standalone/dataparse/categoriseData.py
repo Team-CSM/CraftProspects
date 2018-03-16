@@ -84,8 +84,3 @@ if __name__ == '__main__':
 
 	makeFolders(classes,"train-jpg")
 	relocateFiles(classFiles,"train-jpg")
-
-
-
-
-

@@ -1,7 +1,7 @@
 import unittest
 import os 
 import shutil
-from Standalone.CNN.CNNbinary.predict.prediction import slice_image, os_walk
+from Standalone.CNN.CNNbinary.predict.BinaryPredict import slice_image, os_walk
 
 
 
@@ -9,7 +9,7 @@ from Standalone.CNN.CNNbinary.predict.prediction import slice_image, os_walk
 class test_prediction(unittest.TestCase):
     
     def test_slice_directory(self):
-        slice_image("CI/orig.jpg",20)
+        slice_image("CI/assets/orig.jpg",20)
         
         if os.path.exists("slices/"):
             answer = True
@@ -22,14 +22,14 @@ class test_prediction(unittest.TestCase):
         
     
     def test_slice_number(self):
-        slice_image("CI/orig.jpg",20)
+        slice_image("CI/assets/orig.jpg",20)
         file_list = os.listdir("slices/")
         shutil.rmtree('slices/')
         self.assertEqual(len(file_list),20)
 
     def test_os_walk(self):
-        os_walk_list = os_walk('CI/slices/')
-        file_list = os.listdir('CI/slices/')
+        os_walk_list = os_walk('CI/assets/slices/')
+        file_list = os.listdir('CI/assets/slices/')
        
         file_count = 0
         for file in file_list:
