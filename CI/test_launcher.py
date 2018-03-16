@@ -18,27 +18,27 @@ class test_launcher(unittest.TestCase):
 
     # tests if number of slices created is equal to the number it was asked to be sliced.
     def testSliceNumber_mac(self):
-        if not os.path.exists("output/"):
-            os.makedirs("output/")
-        imagepath = "CI/orig.jpg"
+        if not os.path.exists("CI/output/"):
+            os.makedirs("CI/output/")
+        imagepath = "CI/assets/orig.jpg"
         number = 20
-        macSlice(number,imagepath,"output/")
-        list = os.listdir("output/")
+        macSlice(number,imagepath,"CI/output/")
+        list = os.listdir("CI/output/")
         number_files = len(list)
-        shutil.rmtree("output/")
+        shutil.rmtree("CI/output/")
         self.assertEqual(number,number_files)
 
     def testPredict_text_mac(self):     
-        list = os.listdir("CI/slices")
+        list = os.listdir("CI/assets/slices")
         
-        if not os.path.exists("text/"):
-            os.makedirs("text/")
+        if not os.path.exists("CI/text/"):
+            os.makedirs("CI/text/")
         
         for x in range(len(list)):
-            list[x] = "CI/slices/"+list[x]
+            list[x] = "CI/assets/slices/"+list[x]
         
-        macPredict(list,macClass_to_name,"text/",load_model("CI/model.h5"))
-        list = os.listdir("text/")
+        macPredict(list,macClass_to_name,"CI/text/",load_model("CI/assets/model.h5"))
+        list = os.listdir("CI/text/")
         
         boolean = False
         for file in list:
@@ -48,35 +48,36 @@ class test_launcher(unittest.TestCase):
                 boolean = True
             else:
                 boolean = False
+        shutil.rmtree("CI/text/")
         self.assertEqual(boolean,True)
    
     def testSliceNumber_win(self):
-        if not os.path.exists("output/"):
-            os.makedirs("output/")
-        imagepath = "CI/orig.jpg"
+        if not os.path.exists("CI/output/"):
+            os.makedirs("CI/output/")
+        imagepath = "CI/assets/orig.jpg"
         number = 20
-        winSlice(number,imagepath,"output/")
-        file_list = os.listdir("output/")
+        winSlice(number,imagepath,"CI/output/")
+        file_list = os.listdir("CI/output/")
         file_number = 0 
         for file in file_list:
             if file[0] != ".":
                 file_number += 1
 
-        shutil.rmtree("output/")
+        shutil.rmtree("CI/output/")
         self.assertEqual(number,file_number)
 
     def testPredict_text_win(self):
 
-        list = os.listdir("CI/slices")
+        list = os.listdir("CI/assets/slices")
         
-        if not os.path.exists("text/"):
-            os.makedirs("text/")
+        if not os.path.exists("CI/text/"):
+            os.makedirs("CI/text/")
         
         for x in range(len(list)):
-            list[x] = "CI/slices/"+list[x]
+            list[x] = "CI/assets/slices/"+list[x]
         
-        winPredict(list,winClass_to_name,"text/",load_model("CI/model.h5"))
-        list = os.listdir("text/")
+        winPredict(list,winClass_to_name,"CI/text/",load_model("CI/assets/model.h5"))
+        list = os.listdir("CI/text/")
         
         boolean = False
         for file in list:
@@ -86,6 +87,7 @@ class test_launcher(unittest.TestCase):
                 boolean = True
             else:
                 boolean = False
+        shutil.rmtree('CI/text/')
         self.assertEqual(boolean,True)
 
 
