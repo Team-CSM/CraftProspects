@@ -198,6 +198,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
+  - {fileID: 1544733611}
   - {fileID: 1320394721}
   - {fileID: 1819513218}
   - {fileID: 536265138}
@@ -259,7 +260,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 67df308dee35ed242bfa3cab1469f4c4, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -267,7 +268,7 @@ SpriteRenderer:
   m_Size: {x: 3, y: 0.5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
 --- !u!4 &342095942
 Transform:
@@ -310,12 +311,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 203074024}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -31, y: -76}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: -30.5, y: -76}
+  m_SizeDelta: {x: 157, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &536265139
 MonoBehaviour:
@@ -329,7 +330,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -349,7 +350,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 60
+  m_Text: :D
 --- !u!222 &536265140
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -407,7 +408,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 67df308dee35ed242bfa3cab1469f4c4, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -415,7 +416,7 @@ SpriteRenderer:
   m_Size: {x: 1.9, y: 0.62}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
 --- !u!4 &935357730
 Transform:
@@ -424,8 +425,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 935357728}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.549988, y: 3.649994, z: -10}
-  m_LocalScale: {x: 0.5, y: 2.9, z: 0}
+  m_LocalPosition: {x: 7.072, y: 3.809, z: -10}
+  m_LocalScale: {x: 0.7079177, y: 0.30764365, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -471,12 +472,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 203074024}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -231, y: -61}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: -245.5, y: -69}
+  m_SizeDelta: {x: 171, y: 34}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1320394722
 MonoBehaviour:
@@ -490,7 +491,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -517,6 +518,74 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1320394720}
+--- !u!1 &1544733610
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1544733611}
+  - component: {fileID: 1544733613}
+  - component: {fileID: 1544733612}
+  m_Layer: 5
+  m_Name: Textbg
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1544733611
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1544733610}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -9}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 203074024}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -200, y: -88}
+  m_SizeDelta: {x: 300, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1544733612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1544733610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: 6bc0150d0026a7f488985b5a3077af25, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &1544733613
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1544733610}
 --- !u!1 &1683845779
 GameObject:
   m_ObjectHideFlags: 0
@@ -530,7 +599,6 @@ GameObject:
   - component: {fileID: 1683845780}
   - component: {fileID: 1683845784}
   - component: {fileID: 1683845786}
-  - component: {fileID: 1683845785}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -612,17 +680,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e349c4d9e07d30d4fa0bddf27df713be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1683845785
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1683845779}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 03a84337e25c1eb428ecdbd97c0caab5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1683845786
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -667,12 +724,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 203074024}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -231, y: -101}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: -243.5, y: -110}
+  m_SizeDelta: {x: 169, y: 36}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1819513219
 MonoBehaviour:
@@ -686,7 +743,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -741,6 +798,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4267f9ceed243904491093f09dc1ea1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shader: {fileID: 4800000, guid: 0122c20692c0bbf46a2262ba2c0279f9, type: 3}
 --- !u!212 &1833046467
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -807,6 +865,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1899065372}
   - component: {fileID: 1899065371}
+  - component: {fileID: 1899065374}
   - component: {fileID: 1899065373}
   m_Layer: 0
   m_Name: Background
@@ -849,7 +908,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 34f1d0cf4665eb54fa804d5f92ddc616, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -857,7 +916,7 @@ SpriteRenderer:
   m_Size: {x: 10.24, y: 4.8}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
 --- !u!4 &1899065372
 Transform:
@@ -939,7 +998,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -952,6 +1011,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &1899065374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1899065370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8142a81178b4844d87f77cfc176f27f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneLocate: Menu
 --- !u!1 &2010234679
 GameObject:
   m_ObjectHideFlags: 0
@@ -981,17 +1052,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd98c629e5a71754d971e0759ce3e08f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  filePathDir11: C:\Users\Adrian\Desktop\results\outslices\slice_01_01.png
-  filePathDir12: C:\Users\Adrian\Desktop\results\outslices\slice_01_02.png
-  filePathDir13: C:\Users\Adrian\Desktop\results\outslices\slice_01_03.png
-  filePathDir21: C:\Users\Adrian\Desktop\results\outslices\slice_02_01.png
-  filePathDir22: C:\Users\Adrian\Desktop\results\outslices\slice_02_02.png
-  filePathDir23: C:\Users\Adrian\Desktop\results\outslices\slice_02_03.png
-  filePathDir31: C:\Users\Adrian\Desktop\results\outslices\slice_03_01.png
-  filePathDir32: C:\Users\Adrian\Desktop\results\outslices\slice_03_02.png
-  filePathDir33: C:\Users\Adrian\Desktop\results\outslices\slice_03_03.png
-  texwmod: 3
-  texhmod: 3
+  logfile: ./logfile.txt
+  filePathDir11A: slice_01_01.png
+  filePathDir12A: slice_01_02.png
+  filePathDir13A: slice_01_03.png
+  filePathDir21A: slice_02_01.png
+  filePathDir22A: slice_02_02.png
+  filePathDir23A: slice_02_03.png
+  filePathDir31A: slice_03_01.png
+  filePathDir32A: slice_03_02.png
+  filePathDir33A: slice_03_03.png
+  texwmod: 1
+  texhmod: 1
 --- !u!212 &2010234681
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1060,9 +1132,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddb4ff61f4abe8a448f8606f14958c47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  filePath: C:\Users\Adrian\Desktop\results\cloudy.txt
-  filePathMining: C:\Users\Adrian\Desktop\results\mine.txt
-  filePathSlash: C:\Users\Adrian\Desktop\results\slash_burn.txt
+  logfile: ./logfile.txt
+  filePathA: cloudy.txt
+  filePathMiningA: mine.txt
+  filePathSlashA: slash.txt
 --- !u!1 &2146609122
 GameObject:
   m_ObjectHideFlags: 0
@@ -1113,7 +1186,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 67df308dee35ed242bfa3cab1469f4c4, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1121,7 +1194,7 @@ SpriteRenderer:
   m_Size: {x: 1.9, y: 0.62}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
 --- !u!4 &2146609124
 Transform:

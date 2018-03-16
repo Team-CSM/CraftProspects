@@ -69,7 +69,69 @@ Following up the binary network, we decided to expand to include other classes v
 ## Game
 The game is a 2d image that was sliced into 9 further images, each in which the user is competing against the neural network. Each slice pops up on the screen in turn for a number of seconds depending on the difficulty level, as the user to select a grid of co-ordinates that they believe contain key labels (clouds, mines and slash'n'burn). One point will be awarded for each correct answer and one point will be deducted for clicking a box without any clouds. Double points for finding any mines or grids with slash and burn.
 
-[![Screen_Shot_2018-02-14_at_16.07.34.png](https://s13.postimg.org/kb4jcxip3/Screen_Shot_2018-02-14_at_16.07.34.png)](https://postimg.org/image/ijbki0zc3/)
+## Play
+Simply run the application "Whack-A-Mine" and select an image to start playing. An alias (File->Make alias) can be made so you are able to move the application elsewhere in your system.
+
+## Game Mechanics
+- Use the magnifying glass to identify which grids contain one or multiple clouds and click on them.
+- You will be awarded 1 point for each correct answer and 1 point will be deducted for clicking a box without any clouds.
+- You will get double points for finding any mines or grids with slash and burn.
+- Controls:
+	- Left click to select
+	- m to mute
+	- q to return to menu
+
+## Launcher features
+- Upload your own images which will be copied into a new directory that is named beginning in "players_(name of image the user inputs)"
+- Able to rename the images the user uploads, but unable to rename default images
+- Able to delete own images, but unable to delete default images
+- Able to preview the image first before playing the game
+
+## Directory Structure and Contents
+- Whack-A-Mine.app (Mac). Whack-A-Mine.bat (Windows)
+	- application made using AppleScript and ShellScript to put all the scripts together
+	- batch file to put all the scripts together
+- subfolders with names that begin with "creator" and "players" store important information of the corresponding image. Creator means defaults we provide and players mean images players have uploaded.
+	- orig.jpg is the full image
+	- 9 slice png images are the slices of the full image
+	- txt files each named a category that the neural network predicted the original image contains. Each text file contains the coordinates of areas on the image that that the neural network predicts it to be.
+- launcherMac.py and launcherWin.py
+	- source code of launcher
+- GameMac.app (Mac). WhackAMine.exe, WhackAMine_Data (Windows)
+	- Mac version of the game application. Relies on logfile.txt, highscore.txt and the images subfolders.
+- model.h5 and weights.h5
+	- produced by the neural network and used to predict when uploading images.
+- highscore.txt
+	- populated as the player plays the game
+- logfile.txt
+	- populated as the user selects an image on the launcher interface.
+- __pycache__, build, dist, launcherMac.spec
+	- produced when packaging scripts using [PyInstaller](https://www.pyinstaller.org/)
+
+## Running without the built application
+- Requirements:
+	- h5py (2.7.1)
+	- image (1.5.19)
+	- image-slicer (0.1.1)
+	- Keras (2.1.4)
+	- macholib (1.9)
+	- numpy (1.14.1)
+	- Pillow (5.0.0)
+	- PyInstaller (3.3.1)
+	- scipy (1.0.0)
+	- tensorflow (1.5.0)
+
+- Open terminal in this directory and type ```python launcherMac.py```
+
+## Building with pyinstaller
+- When making changes to the launcher source code which can be retrieved from the main repository, the scripts must be packaged again. Ensure that the following files are in the same directory:
+	- launcherMac.py
+	- subfolders of images
+	- GameMac.app
+	- Whack-A-Mine.app
+- model.h5 and weights.h5
+- logfile.txt
+- highscore.txt
 
 
 ## Description

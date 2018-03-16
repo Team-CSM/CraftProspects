@@ -16,6 +16,10 @@ public class Clickscript : MonoBehaviour
     {
     }
 
+    /// <summary>
+    /// Scene is loaded when sprite is clicked.
+    /// </summary>
+
     void OnMouseDown()
     {
         SceneManager.LoadScene((sceneLocate));

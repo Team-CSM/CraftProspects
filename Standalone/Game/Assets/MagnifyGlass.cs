@@ -3,6 +3,12 @@ using System.Collections;
  
 public class MagnifyGlass : MonoBehaviour
 {
+
+    /// <summary>
+    /// Source: http://www.theappguruz.com/blog/magnify-glass-effect-in-unity
+    /// Has been modified to to suit our game.
+    /// </summary>
+
     private Camera magnifyCamera;
     private GameObject magnifyBorders;
     private LineRenderer LeftBorder, RightBorder, TopBorder, BottomBorder; // Reference for lines of magnify glass borders

@@ -15,6 +15,10 @@ public class Quitscript : MonoBehaviour
     {
     }
 
+    /// <summary>
+    /// Quits application when this sprite is clicked. 
+    /// </summary> 
+
     void OnMouseDown()
     {
         Application.Quit();
