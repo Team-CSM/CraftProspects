@@ -10,6 +10,12 @@ using UnityEngine.UI;
 public class Highscores : MonoBehaviour
 {
 
+    /// <summary>
+    /// High scores are stored on a text file externally.
+    /// Data is retrieved and the top 5 scores in the text file are shown on the text asset.
+    /// Default score is 0.
+    /// </summary>
+
     public string filePath = null;
     public static double[] x = new double[100];
     // Use this for initialization
@@ -42,7 +48,6 @@ public class Highscores : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
 

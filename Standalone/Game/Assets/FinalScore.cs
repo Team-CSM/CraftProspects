@@ -5,12 +5,14 @@ using UnityEngine.UI;
 
 public class FinalScore : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
+    /// <summary>
+    /// In the end game screen, the final score is retrieved from Global Control and showed in the text asset.
+    /// </summary>
+
+    void Start () {
         GameObject.Find("Text").GetComponent<Text>().text = "Final score: " + GlobalControl.score;
     }
 	
-	// Update is called once per frame
 	void Update () {
 		
 	}
