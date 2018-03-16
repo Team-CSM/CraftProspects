@@ -1,7 +1,7 @@
 import unittest
 import os 
 import shutil
-from Standalone.CNN.CNNbinary.predict.prediction import slice_image, os_walk
+from Standalone.CNN.CNNbinary.predict.BinaryPredict import slice_image, os_walk
 
 
 
