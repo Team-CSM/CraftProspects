@@ -60,4 +60,3 @@ test_launcherwin:
   script:
     - python3 -m unittest CI/test_launcherWin.py 
   when: on_success
- 
