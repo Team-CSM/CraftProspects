@@ -36,12 +36,14 @@ test_syntax:
   when: on_success
   
 
+
 test_launcherwin:
   stage: test
   image: ktzr/keras
   script:
     - python3 -m unittest CI/test_launcherWin.py
   when: on_success
+
 
 
 test_launchermac:
@@ -59,6 +61,9 @@ test_categorisedata:
   script:
     - python3 -m unittest CI/test_categorisedata.py
   when: on_success
+
+
+
 test_prediction:
   stage: test
   image: ktzr/keras
