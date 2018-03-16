@@ -1,5 +1,5 @@
-'''
- categorises images in a way that an image doesn't gets classified in more than one class
+'''!@brief Uniquely categorises images into folders from a CSV file.
+ Categorises images in a way that an image doesn't gets classified in more than one class
  only saves 340 images randomly selected in each class. This is because there are not enough slash_burn and artisinal_mine images
 '''
 
@@ -11,7 +11,8 @@ from shutil import copyfile
 
 
 def populateDict(csvDir, classes):
-
+    """Inputs the directory of the CSV file and the name of all the classes. Appends item uniquely to a one category. 
+	Returns a dictionary of all the classes as keys with the images as the values."""
 	classFiles = {}
 	alreadyAdded = []
 
@@ -43,6 +44,7 @@ def populateDict(csvDir, classes):
 
 
 def makeFolders(classes_list,path):
+    """Inputs list classes, and string path. Creates the folders for all classes at the given path. Returns nothing."""
     for var in classes_list:
         if " " in var:
             newpath=path+"/"+var.replace(" ","_")
@@ -52,6 +54,8 @@ def makeFolders(classes_list,path):
             os.makedirs(newpath)
 
 def relocateFiles(dictionary,path):
+    """Inputs the dictionary containing all the classes and their corresponding images, and the path for output. Creates folders for 
+	all the classes at the path, and relocates all images for the class to that folder. Returns nothing."""
     #gets the keys of the dictionary
     keys=dictionary.keys()
 
