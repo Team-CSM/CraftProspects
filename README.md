@@ -7,7 +7,7 @@ Standalone versions can be downloaded in the web app https://whackamine.ml/ and 
 
 Project code documentation can be viewed in https://whackamine.ml/Documentation/
 
-## Directories' contents
+## Repository's contents
 - CI.			Continuous Integration to automate builds and tests scripts such as syntax errors.
 - docs.			Dissertation of this project.
 - Game.			Codebase of the game developed using [Unity](https://unity3d.com/).
