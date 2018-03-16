@@ -55,7 +55,7 @@ function playGame(e) {
   $("#intro").addClass("hidden");
   $("#jump").addClass("hidden");
   $("#gameContainer").removeClass("hidden");
-  var gameInstance = UnityLoader.instantiate("gameContainer", "Build/FinalGL2.json", { onProgress: UnityProgress });
+  var gameInstance = UnityLoader.instantiate("gameContainer", "Build/FinalGL3.json", { onProgress: UnityProgress });
   $("#nav").addClass("hidden");
   tvoff.play();
   document.getElementById("rest").style.marginTop = "100vh";
@@ -69,6 +69,6 @@ jumplink.addEventListener("click", function (event) {
   event.preventDefault();
   myvideo.play();
   myvideo.pause();
-  myvideo.currentTime = 62;
+  myvideo.currentTime = 70;
   myvideo.play();
 }, false);
