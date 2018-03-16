@@ -44,7 +44,7 @@ class test_launcher(unittest.TestCase):
         for file in list:
             
             name = file[:-4]
-            if name in class_to_name:
+            if name in macClass_to_name:
                 boolean = True
             else:
                 boolean = False
@@ -82,7 +82,7 @@ class test_launcher(unittest.TestCase):
         for file in list:
             
             name = file[:-4]
-            if name in class_to_name:
+            if name in winClass_to_name:
                 boolean = True
             else:
                 boolean = False
