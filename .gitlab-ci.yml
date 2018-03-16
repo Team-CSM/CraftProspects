@@ -12,6 +12,7 @@
 #     - pip install -r requirements.txt
 #     - python CI/syntaxChecks.py
 
+image: ktzr/keras
 
 variables:
   GIT_DEPTH: "3"
@@ -19,7 +20,6 @@ variables:
 stages:
   - build
   - test
-
 
 build:
   image: blang/latex
@@ -29,43 +29,25 @@ build:
     paths:
       - "*.pdf"
 
-
-
-test_launchermac:
-  stage: test
-  image: ktzr/keras
-  script:
-    - python3 -m unittest CI/test_launcherMac.py 
-  when: on_success
-
-
-
-test_categorisedata:
-  stage: test
-  image: ktzr/keras
-  script:
-    - python3 -m unittest CI/test_categorisedata.py
-  when: on_success
-
-
-
 test_syntax:
   stage: test
   script:
     - python CI/syntaxChecks.py
   when: on_success
   
-
-
-# test_launcherwin:
-#   stage: test
-#   image: ktzr/keras
-#   script:
-#     - python3 -m unittest CI/test_launcherWin.py
-#   when: on_success
-
-
-
+test_launchermac:
+  stage: test
+  image: ktzr/keras
+  script:
+    - python3 -m unittest CI/test_launcherMac.py 
+  when: on_success
+  
+test_categorisedata:
+  stage: test
+  image: ktzr/keras
+  script:
+    - python3 -m unittest CI/test_categorisedata.py
+  when: on_success
 test_prediction:
   stage: test
   image: ktzr/keras
