@@ -4,17 +4,19 @@ using UnityEngine;
 
 public class Mutescript : MonoBehaviour {
 
-    // Use this for initialization
     public int mute;
 
     void Start () {
 		
 	}
-	
-	// Update is called once per frame
+
 	void Update () {
 		
 	}
+
+    /// <summary>
+    /// In development. Please ignore.
+    /// </summary>
 
     void OnMouseDown()
     {

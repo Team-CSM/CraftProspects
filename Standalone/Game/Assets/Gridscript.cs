@@ -4,9 +4,16 @@ using UnityEngine;
 
 public class Gridscript : MonoBehaviour
 {
-
+    public Shader shader;
     IEnumerator Start()
     {
+
+        /// <summary>
+        /// Shader asset is necessary because all shaders except ones in the assets are lost whenever game is built.
+        /// 1 second delay is applied before the grid is called because the game needs time to upload the image to determine the size of the grid.
+        /// Width and height is taken from the image inserter script. The grid is set to 10 by 10.
+        /// </summary>
+
         yield return new WaitForSeconds(1f);
         Vector3 start = new Vector3(0f, 0f, 0f);
         Vector3 end = new Vector3(0f, 0f, 0f);
@@ -14,8 +21,6 @@ public class Gridscript : MonoBehaviour
 
         float width = Imageinserter.texwidth/200;
         float height = Imageinserter.texheight/200;
-        //float width = 5;
-        //float height = 5;
 
         float i = 0;
         while (i < 11)
@@ -41,13 +46,18 @@ public class Gridscript : MonoBehaviour
         
     }
 
+
+    /// <summary>
+    /// A simple object creator takes the arguments are draws a line from start coordinates to end.
+    /// </summary>
+
     void DrawLine(Vector3 start, Vector3 end, Color color)
     {
         GameObject myLine = new GameObject();
         myLine.transform.position = start;
         myLine.AddComponent<LineRenderer>();
         LineRenderer lr = myLine.GetComponent<LineRenderer>();
-        lr.material = new Material(Shader.Find("Particles/Alpha Blended Premultiply"));
+        lr.material = new Material(shader);
         lr.SetColors(color, color);
         lr.SetWidth(0.02f, 0.02f);
         lr.SetPosition(0, start);
