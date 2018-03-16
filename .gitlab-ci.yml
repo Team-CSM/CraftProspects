@@ -35,7 +35,7 @@ test_syntax:
     - python CI/syntaxChecks.py
   when: on_success
   
-test_launchermac:
+test_launcher:
   stage: test
   image: ktzr/keras
   script:
