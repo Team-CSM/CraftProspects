@@ -54,3 +54,9 @@ test_prediction:
   script:
     - python3 -m unittest CI/test_prediction.py
   when: on_success
+test_launcherwin:
+  stage: test
+  image: ktzr/keras
+  script:
+    - python3 -m unittest CI/test_launcherWin.py 
+  when: on_success
