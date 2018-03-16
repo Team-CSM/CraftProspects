@@ -50,7 +50,7 @@ class test_categorisedata(unittest.TestCase):
                 answer = False
             else:
                 answer = True 
-        shutil.rmtree("CI/outout/")
+        shutil.rmtree("CI/ouput/")
         self.assertTrue(answer)
 
 
