@@ -22,14 +22,6 @@ stages:
   - test
 
 
-test_launchermac:
-  stage: test
-  image: ktzr/keras
-  script:
-    - python3 -m unittest CI/test_launcherMac.py 
-  when: on_success
-
-
 build:
   image: blang/latex
   script:
@@ -37,6 +29,16 @@ build:
   artifacts:
     paths:
       - "*.pdf"
+
+
+
+test_launchermac:
+  stage: test
+  image: ktzr/keras
+  script:
+    - python3 -m unittest CI/test_launcherMac.py 
+  when: on_success
+
 
 
 test_categorisedata:
@@ -62,10 +64,6 @@ test_launcherwin:
   script:
     - python3 -m unittest CI/test_launcherWin.py
   when: on_success
-
-
-
-
 
 
 
