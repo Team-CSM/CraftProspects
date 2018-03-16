@@ -70,8 +70,8 @@ def predictImage(imgstr, model):
         print(image)
     f.close() 
 
-
-slice_image(IMAGE_LOCATION, 900)
-imgstr = os_walk("./slices/")
-model = modelLoader(MODEL_LOCATION)
-predictImage(imgstr, model)
+if __name__ == '__main__':
+    slice_image(IMAGE_LOCATION, 900)
+    imgstr = os_walk("./slices/")
+    model = modelLoader(MODEL_LOCATION)
+    predictImage(imgstr, model)
