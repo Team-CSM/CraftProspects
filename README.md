@@ -31,7 +31,7 @@ Project code documentation can be viewed at https://whackamine.ml/Documentation/
 ## Binary Convolutional Neural Network
 - Initially at the start of the project, a binary decision neural network was developed in order to distinguish between clouds and clear skies, this classification is useful to satellites in order to preserve battery over cloudy skies as no other information can be gathered.
 
-[![Screen_Shot_2018-02-14_at_15.58.01.png](https://s13.postimg.org/i5a8ig2dz/Screen_Shot_2018-02-14_at_15.58.01.png)](https://postimg.org/image/apaywneoj/)
+[![Screen_Shot_2018-02-14_at_15.58.01.png](https://s13.postimg.cc/i5a8ig2dz/Screen_Shot_2018-02-14_at_15.58.01.png)](https://postimg.cc/image/apaywneoj/)
 
 - A simple GUI interface was created using Tkinter to display the results, in order to demonstrate progress to the client. The `.csv` file relating to the actual classification of the image is parsed, and matched to see if the prediciton made by the model is correct.
 
