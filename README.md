@@ -63,7 +63,7 @@ Following up the binary network, we decided to expand to include other classes v
 
 # Standalone Mac and Windows
 
-![Launcher User Interface](https://s14.postimg.org/cjzb0t7td/Screen_Shot_2018-03-15_at_17.46.05.png)
+![Launcher User Interface](https://s14.postimg.cc/cjzb0t7td/Screen_Shot_2018-03-15_at_17.46.05.png)
 
 
 ## Game
