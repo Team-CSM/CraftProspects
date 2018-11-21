@@ -1,5 +1,5 @@
 # Whack-A-Mine
-Web App and Standalone game based on neural network trained using a deep learning image classification algorithm using the [Keras](https://keras.io/) and [TensorFlow](https://www.tensorflow.org/) frameworks. The neural network was trained with the supplied dataset in the Kaggle [dataset](https://www.kaggle.com/c/planet-understanding-the-amazon-from-space/data) and can now distinguish between 4 categories (clear, burn, cloudy and mine).
+Web App and Standalone game based on a neural network model trained using using the [Keras](https://keras.io/) and [TensorFlow](https://www.tensorflow.org/) libraries. The ConvNet was trained with the supplied dataset in this Kaggle [competition](https://www.kaggle.com/c/planet-understanding-the-amazon-from-space/data) and can now distinguish between 4 categories (clear, burn, cloudy and mine).
 
 There is one default image to play the game in the web app, but the standalone includes the functionality of image uploads.
 
